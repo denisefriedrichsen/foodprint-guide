@@ -1,0 +1,23 @@
+
+// <i class="fas fa-heart"></i>
+.heart-full {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: white;
+  text-align: center;
+  color: red;
+}
+
+
+// <i class="far fa-heart"></i>
+.heart-empty {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: white;
+  text-align: center;
+  color: $silver;
+}
+
+
