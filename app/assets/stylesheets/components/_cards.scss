@@ -1,0 +1,110 @@
+
+// product-card
+.card-product {
+  width: 160px;
+  height: 230px;
+}
+
+.card-product-img {
+  height: 160px;
+  width: 160px;
+  background-image: ;
+  border-radius: 20px 20px 0px 0px;
+}
+
+.card-product-body {
+  height: 70px;
+  width: 160px;
+  background-color: $silver;
+  border-radius: 0px 0px 20px 20px;
+
+}
+
+.card-product-title {
+  color: $olive;
+  font-size: 16px;
+
+}
+
+.card-product-subtitle {
+  color: $gold;
+  font-size: 14px;
+}
+
+.card-product-mark {
+
+}
+
+
+// producer-card
+.card-producer {
+  width: 340px;
+  height: 125px;
+  border-radius: 20px;
+}
+
+.card-producer-img {
+  width: 125px;
+  height: 125px;
+  border-radius: 20px 0px 0px 20px;
+}
+
+.card-producer-body {
+  width: 215px;
+  height: 125px;
+  background-color: white;
+}
+
+.card-producer-title {
+  color: $olive;
+
+}
+
+.card-producer-address {
+  color: $gold;
+
+}
+
+.card-producer-distance {
+  color: $gold;
+}
+
+
+// post-card
+.card-post {
+  width: 340px;
+  height: 360px;
+  border-radius: 20px;
+}
+
+.card-post-img {
+  width: 340px;
+  height: 160px;
+  border-radius: 20px 20px 0px 0px;
+  background-image:;
+}
+
+.card-post-body {
+  width: 340px;
+  height: 200px;
+  border-radius: 0px 20px 20px 0px;
+  background-color: $silver;
+}
+
+.card-post-date {
+  color: $gold;
+}
+
+.card-post-title {
+  color: $olive;
+  font-size: 16px;
+}
+
+.card-post-content {
+  color: $gold;
+  font-size: 14px;
+}
+
+.card-post-avatar {
+  border: 5px solid white;
+}
