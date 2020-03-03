@@ -24,6 +24,16 @@ ActiveRecord::Schema.define(version: 2020_03_03_114242) do
     t.index ["product_id"], name: "index_offerings_on_product_id"
   end
 
+  create_table "posts", force: :cascade do |t|
+    t.string "title"
+    t.text "content"
+    t.string "address"
+    t.bigint "producer_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["producer_id"], name: "index_posts_on_producer_id"
+  end
+
   create_table "producers", force: :cascade do |t|
     t.string "company_name"
     t.string "owner_name"
@@ -59,4 +69,5 @@ ActiveRecord::Schema.define(version: 2020_03_03_114242) do
 
   add_foreign_key "offerings", "producers"
   add_foreign_key "offerings", "products"
+  add_foreign_key "posts", "producers"
 end
