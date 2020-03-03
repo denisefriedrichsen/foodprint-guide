@@ -5,4 +5,5 @@ class Producer < ApplicationRecord
   validates :address, presence: true
   has_many :offerings
   has_many :products, through: :offerings
+  has_many :posts
 end
