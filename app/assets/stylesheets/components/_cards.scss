@@ -1,0 +1,132 @@
+
+// product-card
+.card-product {
+  width: 160px;
+  height: 230px;
+}
+
+.card-product-img {
+  height: 160px;
+  width: 160px;
+  border-radius: 20px 20px 0px 0px;
+  background-color: $olive;
+  object-fit: cover;
+}
+
+.card-product-body {
+  height: 70px;
+  width: 160px;
+  padding: 12px 16px;
+
+  background-color: $silver;
+  border-radius: 0px 0px 20px 20px;
+  h3 {
+    color: $olive;
+    font-size: 16px;
+    margin-bottom: 2px;
+  }
+  p {
+    color: $gold;
+    font-size: 14px;
+  }
+}
+
+.card-product-mark {
+
+}
+
+
+// producer-card
+.card-producer {
+  width: 340px;
+  height: 125px;
+  border-radius: 20px;
+  display: flex;
+  position: relative;
+}
+
+.card-producer-img {
+  width: 125px;
+  height: 125px;
+  border-radius: 20px 0px 0px 20px;
+  object-fit: cover;
+}
+
+.card-producer-body {
+  width: 215px;
+  height: 125px;
+  padding: 12px 16px 30px 12px;
+  border-radius: 0px 20px 20px 0px;
+  background-color: $silver;
+
+
+  h3 {
+    color: $olive;
+    font-size: 16px;
+  }
+
+  p {
+    color: $gold;
+    font-size: 14px;
+  }
+}
+
+.card-producer-address {
+  p {
+  margin-bottom: 1px;
+  }
+}
+
+.card-producer-distance {
+  position: absolute;
+  bottom: 3px;
+  right: 16px;
+  p {
+    color: $olive;
+  }
+}
+
+
+// post-card
+.card-post {
+  width: 340px;
+  height: 360px;
+  border-radius: 20px;
+  position: relative;
+}
+
+.card-post-img {
+  width: 340px;
+  height: 160px;
+  border-radius: 20px 20px 0px 0px;
+  object-fit: cover;
+}
+
+.card-post-body {
+  width: 340px;
+  height: 200px;
+  border-radius: 0px 0px 20px 20px;
+  background-color: $silver;
+  padding: 12px 16px;
+  h3 {
+    color: $olive;
+    font-size: 16px;
+  }
+
+  p {
+    color: $gold;
+    font-size: 14px;
+  }
+}
+
+.card-post-date {
+  color: $gold;
+}
+
+
+.card-post-avatar {
+  border: 2px solid white;
+  position: absolute;
+  bottom: 160px;
+  right: 60px;
+}
