@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   resources :posts, only: [:index, :show]
   resources :producers, only: [:show]
   resources :favourite_producers, only: [:create, :index, :destroy]
+  resources :favourite_products, only: [:create, :index, :destroy]
 end
