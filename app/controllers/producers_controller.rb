@@ -1,6 +1,6 @@
 class ProducersController < ApplicationController
-  before_action: :set_favourite_product, only: [:show]
-  before_action: :set_producer, only: [:show]
+  before_action :set_favourite_product, only: [:show]
+  before_action :set_producer, only: [:show]
 
   def show
   end
