@@ -8,27 +8,27 @@
 .card-product-img {
   height: 160px;
   width: 160px;
-  background-image: ;
   border-radius: 20px 20px 0px 0px;
+  background-color: $olive;
+  object-fit: cover;
 }
 
 .card-product-body {
   height: 70px;
   width: 160px;
+  padding: 12px 16px;
+
   background-color: $silver;
   border-radius: 0px 0px 20px 20px;
-
-}
-
-.card-product-title {
-  color: $olive;
-  font-size: 16px;
-
-}
-
-.card-product-subtitle {
-  color: $gold;
-  font-size: 14px;
+  h3 {
+    color: $olive;
+    font-size: 16px;
+    margin-bottom: 2px;
+  }
+  p {
+    color: $gold;
+    font-size: 14px;
+  }
 }
 
 .card-product-mark {
@@ -81,7 +81,6 @@
   width: 340px;
   height: 160px;
   border-radius: 20px 20px 0px 0px;
-  background-image:;
 }
 
 .card-post-body {
