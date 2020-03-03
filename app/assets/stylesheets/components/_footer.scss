@@ -26,3 +26,13 @@
 .footer .fa-heart {
   color: #D23333;
 }
+
+
+@media (max-width: 500px) {
+  .footer-in {
+  display: box !important;
+  height: 100px;
+  padding: 0px 50px;
+  color: white;
+}
+}

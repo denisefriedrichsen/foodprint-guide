@@ -1,16 +1,14 @@
-<div class="container">
+<div class="container-fluid">
   <h1>Pages#home</h1>
   <p>Find me in app/views/pages/home.html.erb</p>
 
-  <i class="fas fa-heart heart-full"></i>
-  <i class="far fa-heart heart-empty"></i>
-  <i class="fas fa-info-circle info"></i>
+
+    <i class="fas fa-info-circle info"></i>
   <i class="fas fa-carrot category"></i>
   <br>
   <a href="" class="btn-gold">Button</a>
-    <p>This is a product-card:</p>
-
     <div class="card-product">
+      <i class="fas fa-heart heart-full card-product-heart"></i>
       <%= image_tag 'product', class:"card-product-img" %>
       <div class="card-product-body">
         <h3>This is a title</h3>
@@ -19,9 +17,8 @@
     </div>
 
 
-    <p>This is a producer-card:</p>
-
     <div class="card-producer">
+      <i class="far fa-heart heart-empty card-producer-heart"></i>
       <%= image_tag 'product', class:"card-producer-img" %>
       <div class="card-producer-body">
         <h3>This is a title</h3>
@@ -35,8 +32,6 @@
         </div>
       </div>
     </div>
-
-    <p>This is a post-card:</p>
 
      <div class="card-post">
       <%= image_tag 'product', class:"card-post-img" %>
