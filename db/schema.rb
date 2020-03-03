@@ -19,6 +19,19 @@ ActiveRecord::Schema.define(version: 2020_03_03_113001) do
     t.string "title"
     t.text "content"
     t.string "address"
+    t.bigint "producer_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["producer_id"], name: "index_posts_on_producer_id"
+  end
+
+  create_table "producers", force: :cascade do |t|
+    t.string "company_name"
+    t.string "owner_name"
+    t.string "address"
+    t.text "description"
+    t.integer "phone_number"
+    t.string "website"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -45,4 +58,5 @@ ActiveRecord::Schema.define(version: 2020_03_03_113001) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "posts", "producers"
 end
