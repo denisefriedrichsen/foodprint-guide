@@ -41,33 +41,51 @@
   width: 340px;
   height: 125px;
   border-radius: 20px;
+  display: flex;
+  position: relative;
 }
 
 .card-producer-img {
   width: 125px;
   height: 125px;
   border-radius: 20px 0px 0px 20px;
+  object-fit: cover;
 }
 
 .card-producer-body {
   width: 215px;
   height: 125px;
-  background-color: white;
-}
+  padding: 12px 16px 30px 12px;
+  border-radius: 0px 20px 20px 0px;
+  background-color: $silver;
 
-.card-producer-title {
-  color: $olive;
 
+  h3 {
+    color: $olive;
+    font-size: 16px;
+  }
+
+  p {
+    color: $gold;
+    font-size: 14px;
+  }
 }
 
 .card-producer-address {
-  color: $gold;
-
+  p {
+  margin-bottom: 1px;
+  }
 }
 
 .card-producer-distance {
-  color: $gold;
+  position: absolute;
+  bottom: 3px;
+  right: 16px;
+  p {
+    color: $olive;
+  }
 }
+
 
 
 // post-card
