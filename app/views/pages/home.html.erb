@@ -1,46 +1,10 @@
 <div class="container-fluid">
   <h1>Pages#home</h1>
-  <p>Find me in app/views/pages/home.html.erb</p>
-
-
-    <i class="fas fa-info-circle info"></i>
+  <i class="fas fa-info-circle info"></i>
   <i class="fas fa-carrot category"></i>
   <br>
   <a href="" class="btn-gold">Button</a>
-    <div class="card-product">
-      <i class="fas fa-heart heart-full card-product-heart"></i>
-      <%= image_tag 'product', class:"card-product-img" %>
-      <div class="card-product-body">
-        <h3>This is a title</h3>
-        <p>This is the subtitle</p>
-      </div>
-    </div>
-
-
-    <div class="card-producer">
-      <i class="far fa-heart heart-empty card-producer-heart"></i>
-      <%= image_tag 'product', class:"card-producer-img" %>
-      <div class="card-producer-body">
-        <h3>This is a title</h3>
-        <div class="card-producer-address">
-          <p>Street</p>
-          <p>City</p>
-          <p>Region</p>
-        </div>
-        <div class="card-producer-distance">
-          <p>12km</p>
-        </div>
-      </div>
-    </div>
-
-     <div class="card-post">
-      <%= image_tag 'product', class:"card-post-img" %>
-      <div class="card-post-body">
-        <p>12. Februar 2020</p>
-        <h3>An apple a day keeps the doctor away.</h3>
-        <p>Detailed information such as seasonal offers, new products special promotions or attendances at marktets.</p>
-      </div>
-        <%= image_tag 'avatar', class:"avatar-large card-post-avatar" %>
-    </div>
-
+  <%= render 'shared/product-card' %>
+  <%= render 'shared/producer-card' %>
+  <%= render 'shared/post-card' %>
 </div>
