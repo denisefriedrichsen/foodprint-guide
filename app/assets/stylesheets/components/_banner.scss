@@ -1,5 +1,23 @@
 .banner-home {
+  width: 100%;
+  height: 440px;
+  background-color: $silver;
+  border-radius: 20px;
+  padding: 48px 90px 0px 26px;
+  h1 {
+    font-size: 25px;
+    color: $olive;
+  }
+  h2 {
+    font-size: 18px;
+    color: $olive;
+    font-family: Lato;
+  }
 }
 
 .banner-show {
+}
+
+.banner-featured {
+
 }
