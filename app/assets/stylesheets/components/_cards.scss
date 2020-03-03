@@ -87,41 +87,46 @@
 }
 
 
-
 // post-card
 .card-post {
   width: 340px;
   height: 360px;
   border-radius: 20px;
+  position: relative;
 }
 
 .card-post-img {
   width: 340px;
   height: 160px;
   border-radius: 20px 20px 0px 0px;
+  object-fit: cover;
 }
 
 .card-post-body {
   width: 340px;
   height: 200px;
-  border-radius: 0px 20px 20px 0px;
+  border-radius: 0px 0px 20px 20px;
   background-color: $silver;
+  padding: 12px 16px;
+  h3 {
+    color: $olive;
+    font-size: 16px;
+  }
+
+  p {
+    color: $gold;
+    font-size: 14px;
+  }
 }
 
 .card-post-date {
   color: $gold;
 }
 
-.card-post-title {
-  color: $olive;
-  font-size: 16px;
-}
-
-.card-post-content {
-  color: $gold;
-  font-size: 14px;
-}
 
 .card-post-avatar {
-  border: 5px solid white;
+  border: 2px solid white;
+  position: absolute;
+  bottom: 160px;
+  right: 60px;
 }
