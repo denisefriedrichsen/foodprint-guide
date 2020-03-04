@@ -1,15 +1,17 @@
+
 <div class="card-producer">
   <i class="far fa-heart heart-empty card-producer-heart"></i>
-  <%= image_tag 'product', class:"card-producer-img" %>
+  <%= image_tag producers.photo, class:"card-producer-img" %>
   <div class="card-producer-body">
-    <h3>This is a title</h3>
+    <h3><%=producers.company_name%></h3>
     <div class="card-producer-address">
-      <p>Street</p>
-      <p>City</p>
-      <p>Region</p>
+      <p><%=producers.street%></p>
+      <p><%=producers.city%></p>
+      <p><%=producers.region%></p>
     </div>
     <div class="card-producer-distance">
       <p>12km</p>
     </div>
   </div>
 </div>
+
