@@ -1,26 +1,25 @@
 <div class="container-fluid">
-  <h1><%= @product.name %></h1>
   <%= render 'shared/banner-show-product' %>
 
-  <div>
+  <div class="product-season">
     <p>Season: <%= @product.season_start%> <%= @product.season_end%> </p>
   </div>
 
-  <div>
+  <div class="product-content">
     <p><%= @product.content %></p>
   </div>
 
   <div>
     <ul>
-      <li><i class="fas fa-info-circle info"></i> <p>Fact 1: <%= @product.fact1 %></p></li>
-      <li><i class="fas fa-info-circle info"></i> <p>Fact 2: <%= @product.fact2 %></p></li>
-      <li><i class="fas fa-info-circle info"></i> <p>Fact 3: <%= @product.fact3 %></p></li>
+      <li><i class="fas fa-info-circle info"></i>Fact 1: <%= @product.fact1 %></li>
+      <li><i class="fas fa-info-circle info"></i>Fact 2: <%= @product.fact2 %></li>
+      <li><i class="fas fa-info-circle info"></i>Fact 3: <%= @product.fact3 %></li>
     </ul>
   </div>
 
-  <div>
+  <div class="product-producer-cards">
     <h2>Local Producers</h2>
+    <%= render partial: 'shared/producer-card', collection: @producers, as: :producers %>
   </div>
-  <%= render 'shared/producer-card' %>
 </div>
 
