@@ -5,6 +5,8 @@ class ProductsController < ApplicationController
   def index
     # @products = Product.where(Date.today => @product.season_start..@product.season_end )
     @products = Product.where('season_start <= ?', Date.today.strftime("%m")).where('season_end >= ?', Date.today.strftime("%m"))
+    @new_season_all_products = Product.where('season_start = ?', (Date.today.strftime("%m").to_i + 1))
+    @new_season_product = @new_season_all_products.sample
   end
 
   def show
