@@ -4,9 +4,11 @@
     <h3>This is what X brings in X on your plate</h3>
   </div>
   <div class="products-index-icons">
-    <i class="fas fa-info-circle info"></i>
+    <i class="fas fa-carrot category"></i>
+    <i class="fas fa-carrot category"></i>
     <i class="fas fa-carrot category"></i>
   </div>
-
-  <%= render partial: 'shared/product-card', collection: @products, as: :product %>
+  <div class="products-index-all-cards">
+    <%= render partial: 'shared/product-card', collection: @products, as: :product %>
+  </div>
 </div>
