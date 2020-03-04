@@ -1,6 +1,8 @@
 class Product < ApplicationRecord
   validates :name, presence: true
   validates :category, inclusion: {in: %w(fruits vegetables cereals dairy meat)}
+  validates :season_start, presence: true
+  validates :season_end, presence: true
   has_many :offerings
   has_many :producers, through: :offerings
 
