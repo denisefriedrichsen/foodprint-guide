@@ -10,7 +10,7 @@ class ProductsController < ApplicationController
   end
 
   def show
-    @producers = @product.offerings.producers
+    @producers = Producer.all#@product.offerings.producers
   end
 
   private

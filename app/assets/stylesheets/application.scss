@@ -21,3 +21,12 @@ a {
 a:hover {
   text-decoration: none;
 }
+
+ul {
+  list-style: none;
+  color: $olive;
+  font-weight: bold;
+  font-size: 16px;
+  padding-left: 10px;
+}
+
