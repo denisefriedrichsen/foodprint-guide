@@ -17,8 +17,8 @@ product_seed_json['feed']['entry'].each do |seed|
   product = Product.new(
     name:  seed['gsx$name']['$t'],
     category: seed['gsx$category']['$t'],
-    # season_start: seed['gsx$seasonstart']['$t'].to_i,
-    # season_end: seed['gsx$seasonend']['$t'].to_i,
+    season_start: seed['gsx$seasonstart']['$t'].to_i,
+    season_end: seed['gsx$seasonend']['$t'].to_i,
     content: seed['gsx$content']['$t'],
     photo: "https://res.cloudinary.com/teamleia/image/upload/v1583248241/foodprint/products/#{seed['gsx$photo']['$t']}.jpg"
   )
@@ -42,6 +42,9 @@ producer_seed_json['feed']['entry'].each do |seed|
   producer = Producer.new(
     company_name:  seed['gsx$companyname']['$t'],
     owner_name: seed['gsx$ownername']['$t'],
+    city: seed['gsx$city']['$t'],
+    street: seed['gsx$street']['$t'],
+    region: seed['gsx$region']['$t'],
     address: seed['gsx$address']['$t'],
     description: seed['gsx$description']['$t'],
     website: seed['gsx$website']['$t'],
@@ -55,6 +58,8 @@ puts "Successfully created producers. Easy!"
 
 
 puts Product.first['name']
+puts Product.first['season_start']
 puts Product.last['name']
-puts Producer.first['company_name']
-puts Producer.last['company_name']
+puts Product.last['season_end']
+puts Producer.first['city']
+puts Producer.last['region']
