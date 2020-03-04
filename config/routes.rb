@@ -7,4 +7,7 @@ Rails.application.routes.draw do
   resources :producers, only: [:show]
   resources :favourite_producers, only: [:create, :index, :destroy]
   resources :favourite_products, only: [:create, :index, :destroy]
+  # resources :profiles, only: [:edit, :update]
+  # patch '/users/update', to: 'profiles#update', as: :update_user
+  # get '/profile/edit', to: 'profiles#edit', as: :edit_user
 end
