@@ -56,6 +56,9 @@ ActiveRecord::Schema.define(version: 2020_03_03_182728) do
     t.string "company_name"
     t.string "owner_name"
     t.string "address"
+    t.string "city"
+    t.string "street"
+    t.string "region"
     t.text "description"
     t.integer "phone_number"
     t.string "website"
@@ -70,6 +73,9 @@ ActiveRecord::Schema.define(version: 2020_03_03_182728) do
     t.integer "season_start"
     t.integer "season_end"
     t.text "content"
+    t.string "fact1"
+    t.string "fact2"
+    t.string "fact3"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "photo"
