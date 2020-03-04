@@ -1,5 +1,5 @@
 class FavouriteProducersController < ApplicationController
-  before_action: :set_favourite_producer, only: [:destroy]
+  before_action :set_favourite_producer, only: [:destroy]
 
   def create
     @favourite_producer = Favourite_producer.new(favourite_producer_params)
