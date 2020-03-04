@@ -6,7 +6,9 @@ class CreateProducts < ActiveRecord::Migration[5.2]
       t.date :season_start
       t.date :season_end
       t.text :content
-
+      t.string :fact1
+      t.string :fact2
+      t.string :fact3
       t.timestamps
     end
   end
