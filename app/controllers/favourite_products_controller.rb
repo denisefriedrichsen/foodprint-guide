@@ -1,5 +1,5 @@
 class FavouriteProductsController < ApplicationController
-  before_action: :set_favourite_product, only: [:destroy]
+  before_action :set_favourite_product, only: [:destroy]
 
   def create
     @favourite_product = Favourite_product.new(favourite_product_params)

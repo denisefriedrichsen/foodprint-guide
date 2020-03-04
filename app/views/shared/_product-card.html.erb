@@ -1,7 +1,11 @@
-<div class="card-product">
-  <%= image_tag 'product', class:"card-product-img" %>
-  <div class="card-product-body">
-    <h3>This is a title</h3>
-    <p>This is the subtitle</p>
+<% @products.each do |product| %>
+  <div class="card-product">
+    <%= image_tag 'product', class:"card-product-img" %>
+    <div class="card-product-body">
+      <h3><%= product.name %></h3>
+      <% if  product.season_start? && product.season_end? %>
+       <p><%= product.season_start %> - <%= product.season_end %></p>
+      <% end %>
+    </div>
   </div>
-</div>
+<% end %>
