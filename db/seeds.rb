@@ -8,5 +8,5 @@
 
 require "date"
 
-apple = Product.create(name: "Apple", category: "fruits", season_start: "03", season_end: "05")
-banana = Product.create(name: "Apple", category: "fruits", season_start: "04", season_end: "06")
+apple = Product.create(name: "Apple", category: "fruits", season_start: 3, season_end: 5)
+banana = Product.create(name: "Apple", category: "fruits", season_start: 4, season_end: 6)
