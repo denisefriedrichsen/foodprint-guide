@@ -1,1 +1,26 @@
-<div><%= @product.name %></div>
+<div class="container-fluid">
+  <h1><%= @product.name %></h1>
+  <%= render 'shared/banner-show-product' %>
+
+  <div>
+    <p>Season: <%= @product.season_start%> <%= @product.season_end%> </p>
+  </div>
+
+  <div>
+    <p><%= @product.content %></p>
+  </div>
+
+  <div>
+    <ul>
+      <li><i class="fas fa-info-circle info"></i> <p>Fact 1: <%= @product.fact1 %></p></li>
+      <li><i class="fas fa-info-circle info"></i> <p>Fact 2: <%= @product.fact2 %></p></li>
+      <li><i class="fas fa-info-circle info"></i> <p>Fact 3: <%= @product.fact3 %></p></li>
+    </ul>
+  </div>
+
+  <div>
+    <h2>Local Producers</h2>
+  </div>
+  <%= render 'shared/producer-card' %>
+</div>
+
