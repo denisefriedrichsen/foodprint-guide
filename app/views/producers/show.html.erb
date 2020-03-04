@@ -1,1 +1,30 @@
-<h1>In 4 Days you will find a producer here</h1>
+<div class="container-fluid">
+  <h1><%= @producer.company_name %></h1>
+  <%= render 'shared/banner-show-producer' %>
+  <div>
+    <p><%= @producer.address%></p>
+  </div>
+
+  <div>
+    <p><%= @producer.description %></p>
+  </div>
+
+  <div>
+    <ul>
+      <li><i class="fas fa-info-circle info"></i> <p>Distance: 12km </p></li>
+      <li><i class="fas fa-info-circle info"></i> <p>Webshop: <%= @producer.website %></p></li>
+      <li><i class="fas fa-info-circle info"></i> <p>Phone: <%= @producer.phone %></p></li>
+    </ul>
+  </div>
+
+  <div>
+    <h2>Latest Updates</h2>
+    <%= render 'shared/post-card' %>
+  </div>
+
+  <div>
+    <h2>Product Overview</h2>
+    <%= render 'shared/product-card' %>
+  </div>
+
+</div>
