@@ -1,9 +1,11 @@
 <div class="container-fluid">
-  <%= render 'shared/banner-featured'%>
+  <%= render 'shared/banner-featured', collection: @new_season_product, as: :new_season_product %>
   <div class="products-index-current-month">
-    <h3>This is what X brings in X on your plate</h3>
+    <h3>This is what <strong> <%= Date::MONTHNAMES[Date.today.month] %> </strong> brings in <strong>Berlin</strong> on your plate</h3>
   </div>
   <div class="products-index-icons">
+    <i class="fas fa-carrot category"></i>
+    <i class="fas fa-carrot category"></i>
     <i class="fas fa-carrot category"></i>
     <i class="fas fa-carrot category"></i>
     <i class="fas fa-carrot category"></i>
