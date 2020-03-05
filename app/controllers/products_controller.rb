@@ -19,6 +19,12 @@ class ProductsController < ApplicationController
         image_url: helpers.asset_url('marker.svg')
       }
     end
+    @markers <<
+      {
+        lat: current_user.latitude,
+        lng: current_user.longitude,
+        image_url: helpers.asset_url('home-marker.svg')
+      }
   end
 
   private
