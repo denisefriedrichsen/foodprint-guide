@@ -3,7 +3,7 @@
     <i class="fas fa-heart heart-full card-product-heart"></i>
     <%= image_tag 'product', class:"card-product-img" %>
     <div class="card-product-body">
-      <h3><%= product.name %></h3>
+      <h3><%= @product.name %></h3>
       <% if product.season_start? && product.season_end? %>
         <p><%= product.season_start_month %> - <%= product.season_end_month %></p>
       <% end %>
