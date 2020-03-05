@@ -4,30 +4,30 @@
     <h3>This is what <strong> <%= Date::MONTHNAMES[Date.today.month] %> </strong> brings in <strong>Berlin</strong> on your plate</h3>
   </div>
   <div class="products-index-icons">
-    <div>
-      <ul class="nav nav-tabs" id="myTab" role="tablist">
+      <ul id="myTab" role="tablist">
+        <div class="products-index-icons-lis">
         <li class="nav-item">
-          <a class="nav-link active fruits" id="fruits-tab" data-toggle="tab" href="#fruits" role="tab" aria-controls="fruits" aria-selected="true">
+          <a class="product-index-tabs active fruits" id="fruits-tab" data-toggle="tab" href="#fruits" role="tab" aria-controls="fruits" aria-selected="true">
             <%= image_tag "fruits.svg", class: "category" %></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link vegetables" id="vegetables-tab" data-toggle="tab" href="#vegetables" role="tab" aria-controls="vegetables" aria-selected="true">
+          <a class="product-index-tabs vegetables" id="vegetables-tab" data-toggle="tab" href="#vegetables" role="tab" aria-controls="vegetables" aria-selected="true">
             <%= image_tag "vegetables.svg", class: "category" %></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link cereals" id="cereals-tab" data-toggle="tab" href="#cereals" role="tab" aria-controls="cereals" aria-selected="true">
+          <a class="product-index-tabs cereals" id="cereals-tab" data-toggle="tab" href="#cereals" role="tab" aria-controls="cereals" aria-selected="true">
             <%= image_tag "cereals.svg", class: "category" %></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link dairy" id="dairy-tab" data-toggle="tab" href="#dairy" role="tab" aria-controls="dairy" aria-selected="true">
+          <a class="product-index-tabs dairy" id="dairy-tab" data-toggle="tab" href="#dairy" role="tab" aria-controls="dairy" aria-selected="true">
             <%= image_tag "dairy.svg", class: "category" %></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link meat" id="meat-tab" data-toggle="tab" href="#meat" role="tab" aria-controls="meat" aria-selected="true">
+          <a class="product-index-tabs meat" id="meat-tab" data-toggle="tab" href="#meat" role="tab" aria-controls="meat" aria-selected="true">
             <%= image_tag "meat.svg", class: "category" %></a>
         </li>
+         </div>
       </ul>
-    </div>
   </div>
 
     <div class="tab-content" id="myTabContent">
