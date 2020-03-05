@@ -13,7 +13,7 @@
 
     <div class="tab-content" id="myTabContent">
       <div class="tab-pane fade show active" id="list" role="tabpanel" aria-labelledby="list-tab">
-        <%= render partial: 'shared/producer-card', collection: @favourite_producers, as: :producers %>
+        <%= render partial: 'shared/producer-card'%>
       </div>
       <div class="tab-pane fade" id="maps" role="tabpanel" aria-labelledby="maps-tab">
         <div
@@ -24,12 +24,10 @@
           data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
         ></div>
         <div>
-          <%= render partial: 'shared/producer-card', collection: @favourite_producers, as: :producers %>
+          <%= render partial: 'shared/producer-card' %>
         </div>
       </div>
     </div>
-
-
-
   </div>
+
 </div>
