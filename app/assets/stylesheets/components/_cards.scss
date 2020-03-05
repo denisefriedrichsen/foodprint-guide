@@ -102,6 +102,12 @@
   border-radius: 20px;
   position: relative;
   margin: 10px 0px;
+
+  h3 {
+    color: $olive;
+    font-size: 16px;
+    text-align: left;
+  }
 }
 
 .card-post-img {
