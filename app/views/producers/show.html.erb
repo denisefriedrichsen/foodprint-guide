@@ -13,18 +13,20 @@
     <ul>
       <li><i class="fas fa-info-circle info"></i> <p>Distance: 12km </p></li>
       <li><i class="fas fa-info-circle info"></i> <p>Webshop: <%= @producer.website %></p></li>
-      <li><i class="fas fa-info-circle info"></i> <p>Phone: <%= @producer.phone %></p></li>
+      <li><i class="fas fa-info-circle info"></i> <p>Phone: <%= @producer.company_name%></p></li>
     </ul>
   </div>
 
   <div>
     <h2>Latest Updates</h2>
-    <%= render 'shared/post-card' %>
+    <%= render partial: 'shared/post-card', object: @post, as: :post %>
   </div>
 
-  <div>
-    <h2>Product Overview</h2>
-    <%= render 'shared/product-card' %>
+  <h2>Product Overview</h2>
+
+  <div class="row">
+    <%= render partial: 'shared/product-card', collection: @products, as: :product %>
   </div>
 
 </div>
+
