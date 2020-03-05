@@ -1,7 +1,7 @@
 <%# products.each do |product| %>
   <div class="card-product">
     <i class="fas fa-heart heart-full card-product-heart"></i>
-    <%= image_tag 'product', class:"card-product-img" %>
+    <%= image_tag product.photo, class:"card-product-img" %>
     <div class="card-product-body">
       <h3><%= product.name %></h3>
       <% if product.season_start? && product.season_end? %>
@@ -10,4 +10,6 @@
     </div>
   </div>
 <%# end %>
+
+
 

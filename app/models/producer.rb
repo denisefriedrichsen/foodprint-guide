@@ -3,7 +3,7 @@ class Producer < ApplicationRecord
   validates :company_name, presence: true
   validates :owner_name, presence: true
   validates :address, presence: true
-  has_many :offerings
+  has_many :offerings, dependent: :destroy
   has_many :products, through: :offerings
-  has_many :posts
+  has_many :posts, dependent: :destroy
 end

@@ -2,11 +2,20 @@ require "date"
 require 'json'
 require 'open-uri'
 
-# creating all products from google spreadheet
-puts "Destroying all Products"
+# destroying all producers, products, offerings and posts
+puts "Destroying all Offerings"
+Offering.destroy_all
 
+puts "Destroying all Products"
 Product.destroy_all
 
+puts "Destroying all Producers"
+Producer.destroy_all
+
+puts "Destroying all Posts"
+Post.destroy_all
+
+# creating all products from google spreadheet
 puts "Creating products..."
 
 product_url = 'https://spreadsheets.google.com/feeds/list/10-q-j1EiK1OkI6ibLB631vhkcJRY0jN6CWd0Sa-EbSU/od6/public/values?alt=json'
@@ -28,10 +37,6 @@ end
 puts "Successfully created products. Easy!"
 
 # creating all producers from google spreadheet
-puts "Destroying all Producers"
-
-Producer.destroy_all
-
 puts "Creating producers..."
 
 producer_url = 'https://spreadsheets.google.com/feeds/list/1cp9Hw1rSBGOowGiHmZlhmxL3qKpK0JhXCbgSxzDiX8Y/od6/public/values?alt=json'
@@ -55,11 +60,47 @@ end
 
 puts "Successfully created producers. Easy!"
 
+# creating all offerings from google spreadheet
+puts "Creating offerings..."
 
+offering_url = 'https://spreadsheets.google.com/feeds/list/1PEmFNI90K3aenAPgM1qseBjqIcRxxVAwNTPDDGvGOQs/od6/public/values?alt=json'
+offering_seed_url = open(offering_url).read
+offering_seed_json = JSON.parse(offering_seed_url)
 
-puts Product.first['name']
+offering_seed_json['feed']['entry'].each do |seed|
+  offering = Offering.new(
+    product:  Product.where('name = ?', seed['gsx$productname']['$t']).first,
+    producer: Producer.where('company_name = ?', seed['gsx$producername']['$t']).first
+  )
+  offering.save!
+end
+
+# creating all posts from google spreadheet
+puts "Creating posts..."
+
+post_url = 'https://spreadsheets.google.com/feeds/list/1Q9NDVecKOzgidp_4jVtVSCqAbqT1DMLxer6FC0AvZVs/od6/public/values?alt=json'
+post_seed_url = open(post_url).read
+post_seed_json = JSON.parse(post_seed_url)
+
+post_seed_json['feed']['entry'].each do |seed|
+  post = Post.new(
+    producer: Producer.where('company_name = ?', seed['gsx$producername']['$t']).first,
+    post_type: seed['gsx$posttype']['$t'],
+    title: seed['gsx$title']['$t'],
+    content: seed['gsx$content']['$t'],
+    address: seed['gsx$address']['$t'],
+    photo: "https://res.cloudinary.com/teamleia/image/upload/v1583411780/foodprint/posts/#{seed['gsx$photo']['$t']}.jpg"
+  )
+  post.save!
+end
+
+puts "Successfully created posts. Easy!"
+
+puts Product.first['category']
 puts Product.first['season_start']
 puts Product.last['name']
 puts Product.last['season_end']
 puts Producer.first['city']
-puts Producer.last['region']
+puts Producer.last['photo']
+
+puts Post.last['title']
