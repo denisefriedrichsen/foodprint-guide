@@ -8,7 +8,7 @@
   justify-content: space-around;
 }
 
-h3 {
+#current_month {
   text-align: center;
 }
 
@@ -24,4 +24,14 @@ h3 {
 
 .products-index-icons img:hover {
   border: 3px solid $gold;
+}
+
+#myTab-products {
+
+}
+
+.mytab-div {
+  .nav-link {
+    padding: 0 !important;
+  }
 }

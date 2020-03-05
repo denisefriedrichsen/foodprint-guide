@@ -10,9 +10,9 @@ class ProductsController < ApplicationController
     @new_season_product = @new_season_all_products.sample
     @fruits = Product.where('category = ?', 'fruits')
     @vegetables = Product.where('category = ?', 'vegetables')
-    @cereals = Product.where('category = ?', 'cereals')
-    @dairy = Product.where('category = ?', 'dairy')
-    @meat = Product.where('category = ?', 'meat')
+    @cereals = Product.all
+    @dairy = Product.all
+    @meat = Product.all
   end
 
   def show
