@@ -10,7 +10,13 @@ class ProductsController < ApplicationController
   end
 
   def show
-    @producers = Producer.all#@product.offerings.producers
+    @producers = Producer.geocoded#@product.offerings.producers
+    @markers = @producers.map do |producer|
+      {
+        lat: producer.latitude,
+        lng: producer.longitude
+      }
+    end
   end
 
   private
