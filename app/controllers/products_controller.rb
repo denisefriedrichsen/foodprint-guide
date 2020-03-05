@@ -18,8 +18,10 @@ class ProductsController < ApplicationController
   def show
 
     @navbar_product = true
-    @producers = Producer.all#@product.offerings.producers
-    @producers = Producer.geocoded#@product.offerings.producers
+    @producers = Producer.geocoded
+    if params[:search].present?
+      @producers = @producers.near(params[:search], 200)
+    end
 
     @markers = @producers.map do |producer|
       {

@@ -1,4 +1,4 @@
-<%# products.each do |product| %>
+<%= link_to product_path(product, search: params[:search].present? ? params[:search][:query] : "") do %>
   <div class="card-product">
     <i class="fas fa-heart heart-full card-product-heart"></i>
     <%= image_tag product.photo, class:"card-product-img" %>
@@ -9,4 +9,4 @@
       <% end %>
     </div>
   </div>
-<%# end %>
+<% end %>
