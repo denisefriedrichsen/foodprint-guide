@@ -13,6 +13,13 @@ class ProductsController < ApplicationController
   def show
     @navbar_product = true
     @producers = Producer.all#@product.offerings.producers
+    @producers = Producer.geocoded#@product.offerings.producers
+    @markers = @producers.map do |producer|
+      {
+        lat: producer.latitude,
+        lng: producer.longitude
+      }
+    end
   end
 
   private
