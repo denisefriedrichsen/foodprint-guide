@@ -11,13 +11,17 @@ class ProductsController < ApplicationController
   end
 
   def show
+
     @navbar_product = true
     @producers = Producer.all#@product.offerings.producers
     @producers = Producer.geocoded#@product.offerings.producers
+
     @markers = @producers.map do |producer|
       {
         lat: producer.latitude,
-        lng: producer.longitude
+        lng: producer.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { producer: producer }),
+        image_url: helpers.asset_url('marker.svg')
       }
     end
   end
