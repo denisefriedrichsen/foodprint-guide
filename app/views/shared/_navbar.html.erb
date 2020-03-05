@@ -1,5 +1,5 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <%= link_to "#", class: "navbar-brand" do %>
+  <%= link_to root_path, class: "navbar-brand" do %>
     <%= image_tag "logo-foodprint" %>
     <% end %>
 
@@ -14,19 +14,19 @@
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
         <li class="nav-item">
-          <%= link_to "Home", "#", class: "nav-link" %>
+          <%= link_to "Home", root_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Discover", "#", class: "nav-link" %>
+          <%= link_to "Discover", products_path, class: "nav-link" %>
         </li>
         <li class="nav-item active">
-          <%= link_to "Newsfeed", "#", class: "nav-link" %>
+          <%= link_to "Newsfeed", posts_path , class: "nav-link" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Favourite products", "#", class: "nav-link" %>
+          <%= link_to "Favourite products", favourite_products_path , class: "nav-link" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Favourite producers", "#", class: "nav-link" %>
+          <%= link_to "Favourite producers", favourite_producers_path , class: "nav-link" %>
         </li>
         <li class="nav-item">
           <%= link_to "My Account", "#", class: "nav-link" %>
