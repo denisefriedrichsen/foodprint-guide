@@ -2,14 +2,14 @@ class FavouriteProducersController < ApplicationController
   before_action :set_favourite_producer, only: [:destroy]
 
   def create
-    @favourite_producer = Favourite_producer.new(favourite_producer_params)
+    @favourite_producer = FavouriteProducer.new(favourite_producer_params)
     @favourite_producer.user_id = current_user
     @favourite_producer.save!
     redirect_to favourite_producers_path
   end
 
   def index
-    @favourite_producers = Favourite_producers.where(user: current_user)
+    @favourite_producers = FavouriteProducers.where(user: current_user)
   end
 
   def destroy
@@ -24,6 +24,6 @@ class FavouriteProducersController < ApplicationController
   end
 
   def set_favourite_producer
-      @favourite_producer = Favourite_producer.find(params[:id])
+      @favourite_producer = FavouriteProducer.find(params[:id])
   end
 end
