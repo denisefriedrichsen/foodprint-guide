@@ -3,6 +3,7 @@ class ProducersController < ApplicationController
   before_action :set_producer, only: [:show]
 
   def show
+    @navbar_producer = true
   end
 
   private

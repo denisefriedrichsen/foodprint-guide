@@ -3,6 +3,7 @@ class ProductsController < ApplicationController
   require 'date'
 
   def index
+    @navbar_seasonal = true
     # @products = Product.where(Date.today => @product.season_start..@product.season_end )
     @products = Product.where('season_start <= ?', Date.today.strftime("%m")).where('season_end >= ?', Date.today.strftime("%m"))
     @new_season_all_products = Product.where('season_start = ?', (Date.today.strftime("%m").to_i + 1))
@@ -10,7 +11,11 @@ class ProductsController < ApplicationController
   end
 
   def show
-    @producers = Producer.geocoded #@product.offerings.producers
+
+    @navbar_product = true
+    @producers = Producer.all#@product.offerings.producers
+    @producers = Producer.geocoded#@product.offerings.producers
+
     @markers = @producers.map do |producer|
       {
         lat: producer.latitude,
