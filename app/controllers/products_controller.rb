@@ -8,6 +8,11 @@ class ProductsController < ApplicationController
     @products = Product.where('season_start <= ?', Date.today.strftime("%m")).where('season_end >= ?', Date.today.strftime("%m"))
     @new_season_all_products = Product.where('season_start = ?', (Date.today.strftime("%m").to_i + 1))
     @new_season_product = @new_season_all_products.sample
+    @fruits = Product.where('category = ?', 'fruits')
+    @vegetables = Product.where('category = ?', 'vegetables')
+    @cereals = Product.where('category = ?', 'cereals')
+    @dairy = Product.where('category = ?', 'dairy')
+    @meat = Product.where('category = ?', 'meat')
   end
 
   def show
