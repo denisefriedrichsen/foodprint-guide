@@ -1,7 +1,15 @@
 <div class="container-fluid">
+  <br>
   <%= render 'shared/banner-featured', collection: @new_season_product, as: :new_season_product %>
   <div class="products-index-current-month">
-    <h3>This is what <strong> <%= Date::MONTHNAMES[Date.today.month] %> </strong> brings in <strong>Berlin</strong> on your plate</h3>
+    <h3>This is what <strong> <%= Date::MONTHNAMES[Date.today.month] %> </strong> brings in
+      <strong>
+        <% if params[:search].nil? %>
+          Berlin
+        <% else %>
+          <%= params[:search][:query].split(",")[0] %>
+        <% end %>
+      </strong> on your plate</h3>
   </div>
   <div class="products-index-icons">
       <ul id="myTab" role="tablist">
