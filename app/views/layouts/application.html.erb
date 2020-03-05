@@ -3,14 +3,25 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>TODO</title>
+    <title>FoodPrint</title>
+    <%= favicon_link_tag 'logo-foodprint' %>
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
   <body>
-    <%= render 'shared/navbar' %>
+
+    <% if @navbar_producer  %>
+      <%= render 'shared/navbar_producer' %>
+    <% elsif @navbar_product  %>
+      <%= render 'shared/navbar_product' %>
+    <% elsif @navbar_seasonal  %>
+      <%= render 'shared/navbar_seasonal' %>
+    <% else %>
+      <%= render 'shared/navbar' %>
+    <% end %>
+
     <%= render 'shared/flashes' %>
     <%= yield %>
     <%= render 'shared/footer' %>

@@ -11,6 +11,7 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+@import "pages/products_index";
 
 
 a {
@@ -20,3 +21,12 @@ a {
 a:hover {
   text-decoration: none;
 }
+
+ul {
+  list-style: none;
+  color: $olive;
+  font-weight: bold;
+  font-size: 16px;
+  padding-left: 10px;
+}
+

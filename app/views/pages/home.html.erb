@@ -1,10 +1,13 @@
 <div class="container-fluid">
-  <%= render 'shared/banner-show-product' %>
-  <%= render 'shared/banner-featured' %>
   <%= render 'shared/banner-home' %>
-  <i class="fas fa-info-circle info"></i>
-  <i class="fas fa-carrot category"></i>
-  <br>
-  <a href="" class="btn-gold">Button</a>
-  <%= render 'shared/post-card' %>
+  <div class="home-button">
+    <%= simple_form_for :search, url: root_path, method: :get do |f| %>
+      <div class="search-form-control form-group">
+        <input class="form-control string required" placeholder="Your city" type="text" name="search[query]" id="search_query" />
+        <button name="button" type="submit" class="btn btn-gold">
+         GO!
+        </button>
+      </div>
+    <% end %>
+  </div>
 </div>

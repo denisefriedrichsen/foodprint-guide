@@ -18,13 +18,13 @@
   height: 70px;
   width: 160px;
   padding: 12px 16px;
-
   background-color: $silver;
   border-radius: 0px 0px 20px 20px;
   h3 {
     color: $olive;
     font-size: 16px;
     margin-bottom: 2px;
+    text-align: left;
   }
   p {
     color: $gold;
@@ -58,7 +58,7 @@
 .card-producer-body {
   width: 215px;
   height: 125px;
-  padding: 12px 16px 30px 12px;
+  padding: 12px 65px 12px 12px;
   border-radius: 0px 20px 20px 0px;
   background-color: $silver;
 
@@ -138,3 +138,4 @@
   bottom: 140px;
   right: 60px;
 }
+
