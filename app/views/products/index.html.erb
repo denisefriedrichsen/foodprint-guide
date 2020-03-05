@@ -4,31 +4,48 @@
     <h3>This is what <strong> <%= Date::MONTHNAMES[Date.today.month] %> </strong> brings in <strong>Berlin</strong> on your plate</h3>
   </div>
   <div class="products-index-icons">
-    <%= link_to root_path do %> <%= image_tag "fruits.svg", class: "category" %> <% end %>
-    <%= link_to root_path do %> <%= image_tag "vegetables.svg", class: "category" %> <% end %>
-    <%= link_to root_path do %> <%= image_tag "cereals.svg", class: "category" %> <% end %>
-    <%= link_to root_path do %> <%= image_tag "dairy.svg", class: "category" %> <% end %>
-    <%= link_to root_path do %> <%= image_tag "meat.svg", class: "category" %> <% end %>
-  </div>
-
-  <div class="products-index-all-cards">
     <div>
       <ul class="nav nav-tabs" id="myTab" role="tablist">
         <li class="nav-item">
-          <a class="nav-link active fruits" id="fruits-tab" data-toggle="tab" href="#fruits" role="tab" aria-controls="fruits" aria-selected="true">List</a>
+          <a class="nav-link active fruits" id="fruits-tab" data-toggle="tab" href="#fruits" role="tab" aria-controls="fruits" aria-selected="true">
+            <%= image_tag "fruits.svg", class: "category" %></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" id="map-tab" data-toggle="tab" href="#map" role="tab" aria-controls="map" aria-selected="false">Map</a>
+          <a class="nav-link vegetables" id="vegetables-tab" data-toggle="tab" href="#vegetables" role="tab" aria-controls="vegetables" aria-selected="true">
+            <%= image_tag "vegetables.svg", class: "category" %></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link cereals" id="cereals-tab" data-toggle="tab" href="#cereals" role="tab" aria-controls="cereals" aria-selected="true">
+            <%= image_tag "cereals.svg", class: "category" %></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link dairy" id="dairy-tab" data-toggle="tab" href="#dairy" role="tab" aria-controls="dairy" aria-selected="true">
+            <%= image_tag "dairy.svg", class: "category" %></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link meat" id="meat-tab" data-toggle="tab" href="#meat" role="tab" aria-controls="meat" aria-selected="true">
+            <%= image_tag "meat.svg", class: "category" %></a>
         </li>
       </ul>
     </div>
+  </div>
 
     <div class="tab-content" id="myTabContent">
       <div class="tab-pane fade show active" id="fruits" role="tabpanel" aria-labelledby="list-tab">
-        <%= render partial: 'shared/product-card', collection: @products, as: :product %>
+        <%= render partial: 'shared/product-card', collection: @fruits, as: :product %>
       </div>
-
-    </div>
+      <div class="tab-pane fade show active" id="vegetables" role="tabpanel" aria-labelledby="list-tab">
+        <%= render partial: 'shared/product-card', collection: @vegetables, as: :product %>
+      </div>
+      <div class="tab-pane fade show active" id="cereals" role="tabpanel" aria-labelledby="list-tab">
+        <%= render partial: 'shared/product-card', collection: @cereals, as: :product %>
+      </div>
+      <div class="tab-pane fade show active" id="dairy" role="tabpanel" aria-labelledby="list-tab">
+        <%= render partial: 'shared/product-card', collection: @dairy, as: :product %>
+      </div>
+      <div class="tab-pane fade show active" id="meat" role="tabpanel" aria-labelledby="list-tab">
+        <%= render partial: 'shared/product-card', collection: @meat, as: :product %>
+      </div>
 
   </div>
 
