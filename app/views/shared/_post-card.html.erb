@@ -1,7 +1,15 @@
 <div class="card-post">
+  <% if post.post_type = "update" %>
+    <%= image_tag post.photo, class:"card-post-img" %>
+  <% elsif post.post_type = "event" %>
+  <%= image_tag "logo.png" %>
+  <% else   %>
   <%= image_tag post.photo, class:"card-post-img" %>
+  <% end %>
+
+
   <div class="card-post-body">
-    <p><%= post.created_at %></p>
+    <p><%= post.created_at.to_date.strftime('%d-%m-%Y') %></p>
     <h3><%= post.title %></h3>
     <p><%= post.content %></p>
   </div>
