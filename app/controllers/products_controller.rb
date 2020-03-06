@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :set_product, only: [:show]
+  before_action :set_product, only: [:show, :upvote, :downvote]
   require 'date'
 
   def index
@@ -37,6 +37,14 @@ class ProductsController < ApplicationController
         lng: current_user.longitude,
         image_url: helpers.asset_url('home-marker.svg')
       }
+  end
+
+  def upvote
+    @product.liked_by(current_user)
+  end
+
+  def downvote
+    @product.unliked_by(current_user)
   end
 
   private
