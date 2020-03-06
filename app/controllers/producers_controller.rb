@@ -5,7 +5,7 @@ class ProducersController < ApplicationController
   def show
     @producer = Producer.find(params[:id])
     @products = Product.joins(:offerings).where(offerings: { producer_id: @producer.id })
-    @post = Post.where(producer_id: @producer.id).last
+    @post = Post.where(producer_id: @producer.id).first
     @navbar_producer = true
   end
 
