@@ -23,7 +23,7 @@ class ProductsController < ApplicationController
       @producers_product = Producer.joins(:offerings).where(offerings: { product_id: @product.id })
     end
 
-    @markers = @producers_product.map do |producer|
+    @markers = @producers.map do |producer|
       {
         lat: producer.latitude,
         lng: producer.longitude,
