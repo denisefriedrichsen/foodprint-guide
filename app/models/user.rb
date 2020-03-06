@@ -9,4 +9,5 @@ class User < ApplicationRecord
   has_many :favourite_products
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
+  acts_as_voter
 end
