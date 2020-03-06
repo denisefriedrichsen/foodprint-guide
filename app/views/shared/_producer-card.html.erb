@@ -5,7 +5,7 @@
     <div class="card-producer-body">
       <h3><%=producer.company_name%></h3>
       <div class="card-producer-address">
-        <% if producer.street > 15 %>
+        <% if producer.street.length > 15 %>
           <p><%= producer.street[0..14]%>..</p>
         <% else %>
           <p><%= producer.street %></p>
