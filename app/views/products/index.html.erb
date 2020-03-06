@@ -2,7 +2,7 @@
   <br>
   <%= render 'shared/banner-featured', collection: @new_season_product, as: :new_season_product %>
   <div class="products-index-current-month">
-    <h3>This is what <strong> <%= Date::MONTHNAMES[Date.today.month] %> </strong> brings in
+    <h3 class ="current_month">This is what <strong> <%= Date::MONTHNAMES[Date.today.month] %> </strong> brings in
       <strong>
         <% if params[:search].nil? %>
         Berlin
