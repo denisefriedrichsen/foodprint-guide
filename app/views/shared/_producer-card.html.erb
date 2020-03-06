@@ -1,9 +1,9 @@
-<%= link_to producer_path do %>
+<%= link_to producer_path(producer) do %>
   <div class="card-producer">
     <i class="far fa-heart heart-empty card-producer-heart"></i>
-    <%= image_tag producers.photo, class:"card-producer-img" %>
+    <%= image_tag producer.photo, class:"card-producer-img" %>
     <div class="card-producer-body">
-      <h3><%=producers.company_name%></h3>
+      <h3><%=producer.company_name%></h3>
       <div class="card-producer-address">
         <% if producers.street > 15 %>
           <p><%= producers.street[0..14]%>..</p>
