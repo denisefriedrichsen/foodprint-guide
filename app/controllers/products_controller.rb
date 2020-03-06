@@ -17,11 +17,10 @@ class ProductsController < ApplicationController
 
   def show
     @navbar_product = true
-    @producers = Producer.geocoded
-    if params[:search].present?
-      @producers = @producers.near(params[:search], 200)
-      @producers_product = Producer.joins(:offerings).where(offerings: { product_id: @product.id })
-    end
+      @producers = Producer.joins(:offerings).where(offerings: { product_id: @product.id })
+      if params[:search].present?
+        @producers = Producer.joins(:offerings).where(offerings: { product_id: @product.id }).near(params[:search], 200)
+      end
 
     @markers = @producers.map do |producer|
       {
@@ -37,7 +36,6 @@ class ProductsController < ApplicationController
         lng: current_user.longitude,
         image_url: helpers.asset_url('home-marker.svg')
       }
-
   end
 
   private

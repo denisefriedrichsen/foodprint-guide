@@ -12,14 +12,6 @@
     <p><%= @producer.description %></p>
   </div>
 
-<!--   <div>
-    <ul>
-      <li><div class="producers-info"><i class="fas fa-info-circle info"></i> <p>Distance: 12km </p></div></li>
-      <li><div class="producers-info"><i class="fas fa-info-circle info"></i> <p>Webshop: <%= @producer.website %></p></div></li>
-      <li><div class="producers-info"><i class="fas fa-info-circle info"></i> <p>Phone: <%= @producer.company_name%></p></div></li>
-    </ul>
-  </div> -->
-
   <div>
     <ul>
       <li><i class="fas fa-info-circle info"></i>Distance: 12km</li>
@@ -35,6 +27,7 @@
     <%= render partial: 'shared/post-card', object: @post, as: :post %>
   </div>
 
+
   <div class="producer-show">
     <br>
     <h2>Product Overview</h2>
@@ -45,4 +38,3 @@
   </div>
 
 </div>
-
