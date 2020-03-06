@@ -1,6 +1,10 @@
 <div class="container-fluid">
   <%= render 'shared/banner-show-producer' %>
-  <div>
+<!--   <div>
+    <p><%= @producer.address%></p>
+  </div> -->
+
+  <div class="product-season">
     <p><%= @producer.address%></p>
   </div>
 
@@ -8,20 +12,33 @@
     <p><%= @producer.description %></p>
   </div>
 
-  <div>
+<!--   <div>
     <ul>
       <li><div class="producers-info"><i class="fas fa-info-circle info"></i> <p>Distance: 12km </p></div></li>
       <li><div class="producers-info"><i class="fas fa-info-circle info"></i> <p>Webshop: <%= @producer.website %></p></div></li>
       <li><div class="producers-info"><i class="fas fa-info-circle info"></i> <p>Phone: <%= @producer.company_name%></p></div></li>
     </ul>
-  </div>
+  </div> -->
 
   <div>
+    <ul>
+      <li><i class="fas fa-info-circle info"></i>Distance: 12km</li>
+      <li><i class="fas fa-info-circle info"></i>Region: <%= @producer.region %></li>
+      <li><i class="fas fa-info-circle info"></i>Website: <%= @producer.website %></li>
+    </ul>
+  </div>
+
+
+ <div class="producer-show">
+    <br>
     <h2>Latest Updates</h2>
     <%= render partial: 'shared/post-card', object: @post, as: :post %>
   </div>
 
-  <h2>Product Overview</h2>
+  <div class="producer-show">
+    <br>
+    <h2>Product Overview</h2>
+  </div>
 
   <div class="row">
     <%= render partial: 'shared/product-card', collection: @products, as: :product %>
