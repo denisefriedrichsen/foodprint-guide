@@ -96,7 +96,7 @@
 
 // post-card
 .card-post {
-  max-width: 340px;
+  max-width: 100%;
   border-radius: 20px;
   position: relative;
   margin: 10px 0px;
@@ -116,7 +116,7 @@
 }
 
 .card-post-body {
-  max-width: 340px;
+  max-width: 100%;
   border-radius: 0px 0px 20px 20px;
   background-color: $silver;
   padding: 12px 16px;
