@@ -1,13 +1,13 @@
-<%= link_to producer_path do %>
+<%= link_to producer_path(producer) do %>
   <div class="card-producer">
     <i class="far fa-heart heart-empty card-producer-heart"></i>
-    <%= image_tag producers.photo, class:"card-producer-img" %>
+    <%= image_tag producer.photo, class:"card-producer-img" %>
     <div class="card-producer-body">
-      <h3><%=producers.company_name%></h3>
+      <h3><%=producer.company_name%></h3>
       <div class="card-producer-address">
-        <p><%=producers.street%></p>
-        <p><%=producers.city%></p>
-        <p><%=producers.region%></p>
+        <p><%=producer.street%></p>
+        <p><%=producer.city%></p>
+        <p><%=producer.region%></p>
       </div>
       <div class="card-producer-distance">
         <p>12km</p>
