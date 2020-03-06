@@ -7,7 +7,13 @@
       <% if post.post_type == "update" %>
         <%= image_tag post.photo, class:"card-post-img" %>
       <% else post.post_type == "event" %>
-        <%= image_tag "logo.png" %>
+        <div
+          id="map"
+          style="width: 100%;
+          height: 400px;"
+          data-markers="<%= @markers.to_json %>"
+          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+        ></div>
       <% end %>
 
 
