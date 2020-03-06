@@ -1,9 +1,4 @@
-<% if post == nil %>
-  <div> - </div>
-  <br>
-<% else %>
-
-    <div class="card-post">
+<div class="card-post">
       <% if post.post_type == "update" %>
         <%= image_tag post.photo, class:"card-post-img" %>
       <% else post.post_type == "event" %>
@@ -23,7 +18,4 @@
         <p><%= post.content %></p>
       </div>
       <%= cl_image_tag post.producer.photo, width: 90, height: 90, crop: :scale, class:"avatar-large card-post-avatar " %>
-    </div>
-
-<% end %>
-
+</div>
