@@ -8,20 +8,16 @@
   justify-content: space-around;
 }
 
-h3 {
-  text-align: center;
-}
-
-.banner-featured-button {
-  display: flex;
-  position: relative;
-  top: -80px;
-  right: -100px;
-}
 .products-index-icons {
   margin-top: 10px;
 }
 
-.products-index-icons img:hover {
-  border: 3px solid $gold;
+#myTab-products {
+
+}
+
+.mytab-div {
+  .nav-link {
+    padding: 0 !important;
+  }
 }

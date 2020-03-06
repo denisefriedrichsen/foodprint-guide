@@ -1,3 +1,4 @@
+<div class="col-6 mt-3 px-2">
 <%= link_to product_path(product, search: params[:search].present? ? params[:search][:query] : "") do %>
   <div class="card-product">
     <i class="fas fa-heart heart-full card-product-heart"></i>
@@ -5,8 +6,10 @@
     <div class="card-product-body">
       <h3><%= product.name %></h3>
       <% if product.season_start? && product.season_end? %>
-        <p><%= product.season_start_month %> - <%= product.season_end_month %></p>
+      <p><%= product.season_start_month %> - <%= product.season_end_month %></p>
       <% end %>
     </div>
   </div>
 <% end %>
+</div>
+
