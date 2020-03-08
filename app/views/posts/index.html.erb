@@ -1,4 +1,62 @@
-<div><% @posts each do |post| %></div>
-<div><%= post.title %></div>
-<% end %>
+<div class="container-fluid">
+  <br>
+  <div id="header">
+    <h1>Hello Marian!</h1>
+    <h4>How are you today?</h4>
+  </div>
+  <div class="newsfeed-menu">
+    <div class="newsfeed-menu-left">
+      <div class="newsfeed-menu-products">
+        <%= link_to products_path do %>
+          <p>Discover new products</p>
+        <% end %>
+        <img id="products_search" src="assets/products_search.svg" alt="">
+      </div>
+      <div class="newsfeed-menu-options">
+        <div class="dismissed">Products you dismissed</div>
+        <div class="account">Edit your account</div>
+      </div>
+    </div>
 
+    <div class="newsfeed-menu-right">
+      Producers you like
+      <img id="producer_marker" src="assets/producer_marker.svg" alt="producer_marker">
+      <img id="producer_icon" src="assets/producer_icon.svg" alt="producer_marker">
+    </div>
+  </div>
+
+
+
+  <br>
+  <h2 id="updates">Updates</h2>
+  <div>
+    <% @posts.each do |post| %>
+    <div class="card-post" id="posts">
+      <% if post.post_type.nil? %>
+        <div></div>
+      <% else %>
+        <% if post.post_type == "update" %>
+          <%= image_tag post.photo, class:"card-post-img" %>
+        <% else post.post_type == "event" %>
+          <div
+          id="map"
+          style="width: 100%;
+          height: 400px;"
+          data-markers="<%= @markers.to_json %>"
+          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+          ></div>
+        <% end %>
+
+        <div class="card-post-body">
+          <p><%= post.created_at.to_date.strftime('%d-%m-%Y') %></p>
+          <h3><%= post.title %></h3>
+          <p><%= post.content %></p>
+        </div>
+        <%= cl_image_tag post.producer.photo, width: 90, height: 90, crop: :scale, class:"avatar-large card-post-avatar " %>
+      <% end %>
+    </div>
+    <% end %>
+  </div>
+
+
+</div>

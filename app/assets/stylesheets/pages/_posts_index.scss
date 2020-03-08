@@ -1,0 +1,96 @@
+h1, h3, h2, h4 {
+  color: $olive;
+}
+
+#header {
+  h4 {
+    font-size: 20px;
+  }
+  h1 {
+    font-size: 40px;
+  }
+}
+
+#updates {
+  text-align: center;
+}
+
+.newsfeed-menu {
+  display: flex;
+}
+
+.newsfeed-menu-left {
+  width: 228px;
+  margin-right: 8px;
+}
+
+.newsfeed-menu-products {
+  height: 114px;
+  background-image: url('apple.svg');
+  background-size: cover;
+  border-radius: 20px;
+  display: flex;
+  #products_search {
+    position: relative;
+    right: 30px;
+  }
+  p {
+    color: white;
+    padding-left: 15px;
+    padding-right: 60px;
+    position: relative;
+    top: 30px;
+    vertical-align: middle !important;
+  }
+}
+
+.newsfeed-menu-options {
+  display: flex;
+  div {
+  background-color: #F2F2E7;
+  width: 114px;
+  height: 108px;
+  border-radius: 20px;
+  color: $olive;
+  margin-top: 8px;
+  }
+  .dismissed {
+    margin-right: 8px;
+    padding-top: 10%;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .account {
+    padding-top: 10%;
+    padding-left: 10px;
+    padding-right: 40px;
+  }
+}
+
+.newsfeed-menu-right {
+  border-radius: 10px;
+  background-image: url('map_producers.svg');
+  color: $olive;
+  padding-top: 10%;
+  padding-left: 15px;
+  padding-right: 20px;
+  display: flex;
+  #producer_marker {
+    position: absolute;
+    width: 14.5px;
+    top: 291px;
+    left: 299px;
+    height: 24px;
+  }
+  #producer_icon {
+    position: absolute;
+    width: 40px;
+    height: 49px;
+    left: 286px;
+    top: 344px;
+  }
+}
+
+#updates, #posts, #header {
+  margin-bottom: 20px;
+}
