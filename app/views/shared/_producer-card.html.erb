@@ -14,7 +14,11 @@
         <p><%=producer.region%></p>
       </div>
       <div class="card-producer-distance">
-        <p>12km</p>
+        <% if params[:search].present? %>
+          <p><%=producer.distance_to(params[:search]).to_i%>km</p>
+        <% else %>
+          <p><%=producer.distance_to(current_user).to_i%>km</p>
+        <% end %>
       </div>
     </div>
   </div>

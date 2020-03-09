@@ -17,10 +17,12 @@ class ProductsController < ApplicationController
 
   def show
     @navbar_product = true
-      @producers = Producer.joins(:offerings).where(offerings: { product_id: @product.id })
-      if params[:search].present?
-        @producers = Producer.joins(:offerings).where(offerings: { product_id: @product.id }).near(params[:search], 200)
-      end
+    if params[:search].present?
+      @producers = Producer.joins(:offerings).where(offerings: { product_id: @product.id }).near(params[:search], 200)
+    else
+      @producers = Producer.joins(:offerings).where(offerings: { product_id: @product.id }).near(current_user, 200)
+    end
+
 
     @markers = @producers.map do |producer|
       {
@@ -29,13 +31,26 @@ class ProductsController < ApplicationController
         infoWindow: render_to_string(partial: "info_window", locals: { producer: producer }),
         image_url: helpers.asset_url('marker.svg')
       }
+
     end
-    @markers <<
-      {
-        lat: current_user.latitude,
-        lng: current_user.longitude,
-        image_url: helpers.asset_url('home-marker.svg')
-      }
+
+    if params[:search].present?
+      @results = Geocoder.search(params[:search])
+      @markers <<
+        {
+          lat: @results.first.coordinates[0],
+          lng: @results.first.coordinates[1],
+          image_url: helpers.asset_url('home-marker.svg')
+        }
+
+    else
+      @markers <<
+        {
+          lat: current_user.latitude,
+          lng: current_user.longitude,
+          image_url: helpers.asset_url('home-marker.svg')
+        }
+    end
   end
 
   private
