@@ -75,20 +75,22 @@ h1, h3, h2, h4 {
   padding-top: 10%;
   padding-left: 15px;
   padding-right: 20px;
+  width: 109px;
+  height: 230px;
   display: flex;
   #producer_marker {
     position: relative;
     width: 14.5px;
-    top: 30px;
-    left: 299px;
+    top: 70px;
+    left: -37px;
     height: 24px;
   }
   #producer_icon {
     position: relative;
     width: 40px;
     height: 49px;
-    left: 286px;
-    top: 30px;
+    top: 110px;
+    left: -65px;
   }
 }
 
