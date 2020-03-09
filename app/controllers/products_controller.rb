@@ -40,6 +40,7 @@ class ProductsController < ApplicationController
         {
           lat: @results.first.coordinates[0],
           lng: @results.first.coordinates[1],
+          infoWindow: render_to_string(partial: "info_window", locals: { producer: @result }),
           image_url: helpers.asset_url('home-marker.svg')
         }
 
@@ -48,6 +49,7 @@ class ProductsController < ApplicationController
         {
           lat: current_user.latitude,
           lng: current_user.longitude,
+          infoWindow: render_to_string(partial: "info_window", locals: { producer: current_user }),
           image_url: helpers.asset_url('home-marker.svg')
         }
     end
