@@ -6,6 +6,7 @@ class Product < ApplicationRecord
   validates :season_end, presence: true
   has_many :offerings, dependent: :destroy
   has_many :producers, through: :offerings
+  has_many :votes
 
   def season_start_month
     Date::MONTHNAMES[season_start].slice(0, 3)

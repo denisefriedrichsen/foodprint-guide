@@ -1,7 +1,0 @@
-<div class="container-fluid">
-<% if user.voted_for? @product  %>
-  <%= render partial: 'shared/product-card', collection: @favourite_products, as: :product %>
-<% else %>
-  <%= render partial: 'shared/product-card', collection: @favourite_products, as: :product %>
- <% end %>
-</div>

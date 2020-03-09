@@ -1,0 +1,9 @@
+<h3>favourite products</h3>
+
+<div class="container-fluid">
+
+  <%= render partial: 'shared/product-card', collection: @products, as: :product %>
+<%# else %>
+  <%#= render partial: 'shared/product-card', collection: @favourite_products, as: :product %>
+ <%# end %>
+</div>
