@@ -8,11 +8,11 @@ class ProductsController < ApplicationController
     @products = Product.where('season_start <= ?', Date.today.strftime("%m")).where('season_end >= ?', Date.today.strftime("%m"))
     @new_season_all_products = Product.where('season_start = ?', (Date.today.strftime("%m").to_i + 1))
     @new_season_product = @new_season_all_products.sample
-    @fruits = Product.where('category = ?', 'fruits')
-    @vegetables = Product.where('category = ?', 'vegetables')
-    @cereals = Product.where('category = ?', 'cereals')
-    @dairy = Product.where('category = ?', 'dairy')
-    @meat = Product.where('category = ?', 'meat')
+    @fruits = Product.where('category = ? AND season_start <= ? AND season_end >= ?', 'fruits', Date.today.strftime("%m").to_i, Date.today.strftime("%m").to_i)
+    @vegetables = Product.where('category = ? AND season_start <= ? AND season_end >= ?', 'vegetables', Date.today.strftime("%m").to_i, Date.today.strftime("%m").to_i)
+    @cereals = Product.where('category = ? AND season_start <= ? AND season_end >= ?', 'cereals', Date.today.strftime("%m").to_i, Date.today.strftime("%m").to_i)
+    @dairy = Product.where('category = ? AND season_start <= ? AND season_end >= ?', 'dairy', Date.today.strftime("%m").to_i, Date.today.strftime("%m").to_i)
+    @meat = Product.where('category = ? AND season_start <= ? AND season_end >= ?', 'meat', Date.today.strftime("%m").to_i, Date.today.strftime("%m").to_i)
   end
 
   def show
