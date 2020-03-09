@@ -1,26 +1,26 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon sticky-top">
+<div class="navbar navbar-expand-lg navbar-light navbar-lewagon sticky-top">
   <%= link_to root_path, class: "navbar-brand" do %>
     <%= image_tag "logo-foodprint.png" %>
-    <% end %>
-
-    <h1><%=@producer.company_name%></h1>
-
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span><%= image_tag("hamburger.svg") %></span>
+  <% end %>
+  <h1><%= @producer.company_name %></h1></span>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+  <span class="navbar-toggler-icon"></span>
   </button>
 
-
-  <div class="collapse navbar-collapse text-right" id="navbarSupportedContent">
+  <div class="collapse navbar-collapse" id="navbarCollapse">
     <ul class="navbar-nav mr-auto">
-      <% if user_signed_in? %>
-        <li class="nav-item">
-          <%= link_to "Home", root_path, class: "nav-link" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "Discover", products_path, class: "nav-link" %>
-        </li>
+      <button class="navbar-toggler" id="burger" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="true" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    <% if user_signed_in? %>
         <li class="nav-item active">
+          <%= link_to "Home", root_path, class: "nav-link", id: "home" %>
+        </li>
+        <li class="nav-item">
           <%= link_to "Newsfeed", posts_path , class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Discover products", products_path , class: "nav-link" %>
         </li>
         <li class="nav-item">
           <%= link_to "Favourite products", favourite_products_path , class: "nav-link" %>
@@ -31,20 +31,16 @@
         <li class="nav-item">
           <%= link_to "My Account", "#", class: "nav-link" %>
         </li>
-        <li class="nav-item dropdown">
-          <%= image_tag "avatar.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%= link_to "Action", "#", class: "dropdown-item" %>
-            <%= link_to "Another action", "#", class: "dropdown-item" %>
-            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-          </div>
+        <li class="nav-item">
+          <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "nav-link", id: "logout" %>
         </li>
+
       <% else %>
         <li class="nav-item">
-          <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+          <%= link_to "Login", new_user_session_path, class: "nav-link", id: "login" %>
         </li>
       <% end %>
     </ul>
   </div>
-</div>
 
+</div>

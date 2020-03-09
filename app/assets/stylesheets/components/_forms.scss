@@ -6,22 +6,10 @@
   p {
     color: $olive;
   }
-  #user_email {
-    text-align: center;
-    border-radius: 5px;
-  }
-  #user_password {
-    text-align: center;
-    border-radius: 5px;
-  }
-  #user_address {
-    text-align: center;
-    border-radius: 5px;
-  }
-  #user_password_confirmation {
-    text-align: center;
-    border-radius: 5px;
-  }
+.form-inputs input {
+  text-align: center;
+  border-radius: 5px;
+}
 }
 
 .form-control.is-valid {

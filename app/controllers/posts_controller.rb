@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
 
   def index
+    @navbar_newsfeed = true
     @posts = Post.all
   end
 

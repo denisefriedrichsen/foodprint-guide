@@ -70,24 +70,27 @@ h1, h3, h2, h4 {
 .newsfeed-menu-right {
   border-radius: 10px;
   background-image: url('map_producers.svg');
+  background-size: cover;
   color: $olive;
   padding-top: 10%;
   padding-left: 15px;
   padding-right: 20px;
+  width: 109px;
+  height: 230px;
   display: flex;
   #producer_marker {
-    position: absolute;
+    position: relative;
     width: 14.5px;
-    top: 291px;
-    left: 299px;
+    top: 70px;
+    left: -37px;
     height: 24px;
   }
   #producer_icon {
-    position: absolute;
+    position: relative;
     width: 40px;
     height: 49px;
-    left: 286px;
-    top: 344px;
+    top: 110px;
+    left: -65px;
   }
 }
 
