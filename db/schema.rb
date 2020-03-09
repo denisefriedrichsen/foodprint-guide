@@ -72,6 +72,8 @@ ActiveRecord::Schema.define(version: 2020_03_06_120108) do
     t.datetime "updated_at", null: false
     t.string "post_type"
     t.string "photo"
+    t.float "latitude"
+    t.float "longitude"
     t.index ["producer_id"], name: "index_posts_on_producer_id"
   end
 
@@ -114,7 +116,7 @@ ActiveRecord::Schema.define(version: 2020_03_06_120108) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.text "address"
+    t.string "address"
     t.string "photo"
     t.string "username"
     t.float "latitude"

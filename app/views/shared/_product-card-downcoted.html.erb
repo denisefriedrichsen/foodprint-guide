@@ -1,0 +1,16 @@
+  <div class="card-product">
+    <%= link_to "upvote", product_upvote_path(product), method: :post %>
+    <%= link_to "downvote", product_downvote_path(product), method: :delete %>
+    <i class="fas fa-heart heart-outline card-product-heart"></i>
+
+    <%= image_tag product.photo, class:"card-product-img" %>
+    <%= link_to product_path(product, search: params[:search].present? ? params[:search][:query] : "") do %>
+      <div class="card-product-body">
+        <h3><%= product.name %></h3>
+        <% if product.season_start? && product.season_end? %>
+          <p><%= product.season_start_month %> - <%= product.season_end_month %></p>
+        <% end %>
+      </div>
+      </div>
+<% end %>
+

@@ -40,11 +40,14 @@ class ProductsController < ApplicationController
   end
 
   def upvote
+
     @product.liked_by(current_user)
+    redirect_to products_path(@product)
   end
 
   def downvote
     @product.unliked_by(current_user)
+    redirect_to products_path(@product)
   end
 
   private

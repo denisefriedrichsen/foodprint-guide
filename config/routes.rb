@@ -8,13 +8,12 @@ Rails.application.routes.draw do
   resources :producers, only: [:show]
   resources :favourite_producers, only: [:create, :index, :destroy]
   resources :posts, only: [:index, :show]
+  resources :users
 
-  post 'product/:id/upvote' => 'products#upvote', as: :product_upvote
-  delete 'product/:id/downvote' => 'products#downvote', as: :product_downvote
+  patch 'product/:id/upvote' => 'products#upvote', as: :product_upvote
+  patch 'product/:id/downvote' => 'products#downvote', as: :product_downvote
   # resources :profiles, only: [:edit, :update]
   # patch '/users/update', to: 'profiles#update', as: :update_user
   # get '/profile/edit', to: 'profiles#edit', as: :edit_user
-
-
 
 end

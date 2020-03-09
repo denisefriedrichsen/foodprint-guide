@@ -1,7 +1,19 @@
   <div class="card-product">
-    <%= link_to "upvote", product_upvote_path(product), method: :post %>
-    <%= link_to "downvote", product_downvote_path(product), method: :delete %>
-    <i class="fas fa-heart heart-full card-product-heart"></i>
+    <% if current_user.voted_for? product  %>
+        <%= link_to product_downvote_path(product), method: :patch, class: "button is-link" do %>
+         <span class="icon">
+            <i class="fas fa-heart heart-empty card-product-heart"></i>
+          </span>
+        <% end %>
+    <% else %>
+        <%= link_to product_upvote_path(product), method: :patch, class: "button is-link" do %>
+          <span class="icon">
+            <i class="fas fa-heart heart-full card-product-heart"></i>
+          </span>
+        <% end %>
+    <% end %>
+
+
 
     <%= image_tag product.photo, class:"card-product-img" %>
     <%= link_to product_path(product, search: params[:search].present? ? params[:search][:query] : "") do %>
@@ -13,3 +25,4 @@
       </div>
       </div>
 <% end %>
+
