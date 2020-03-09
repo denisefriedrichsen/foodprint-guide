@@ -18,17 +18,17 @@
 .card-product-not-available-label {
   background-color: white;
   position: absolute;
-  height: 40px;
-  width: 120px;
-  top: 18px;
-  left: 0px;
-  border-radius: 0 4px 4px 0px;
+  height: 80px;
+  width: 140px;
+  top: 10px;
+  left: 9px;
+  border-radius: 20px;
   color: $gold;
-  text-align: left;
-  font-size: 14px;
+  text-align: center;
+  font-size: 20px;
   vertical-align: middle;
   line-height: initial;
-  padding: 3px 10px 3px 16px;
+  padding: 15px 12px;
 }
 
 .card-product-img {
