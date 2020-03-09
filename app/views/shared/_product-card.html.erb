@@ -1,19 +1,39 @@
 <div class="col-6 mt-3 px-2">
-<%= link_to product_path(product, search: params[:search].present? ? params[:search][:query] : "") do %>
-  <div class="card-product">
-    <i class="fas fa-heart heart-full card-product-heart"></i>
-    <%= image_tag product.photo, class:"card-product-img" %>
-    <div class="card-product-body">
-        <% if product.name.length > 10 %>
-          <h3><%= product.name[0..9]%>..</h3>
-        <% else %>
-          <h3><%= product.name%></h3>
-        <% end %>
-      <% if product.season_start? && product.season_end? %>
-      <p><%= product.season_start_month %> - <%= product.season_end_month %></p>
-      <% end %>
-    </div>
-  </div>
-<% end %>
+<% @producers = Producer.joins(:offerings).where(offerings: { product_id: product.id }).near(params[:search], 200) %>
+  <% if @producers == [] %>
+    <%= link_to product_path(product, search: params[:search].present? ? params[:search][:query] : "") do %>
+      <div class="card-product-not-available">
+        <i class="fas fa-heart heart-full card-product-heart"></i>
+        <%= image_tag product.photo, class:"card-product-img" %>
+        <div class="card-product-body">
+            <% if product.name.length > 10 %>
+              <h3><%= product.name[0..9]%>..</h3>
+            <% else %>
+              <h3><%= product.name%></h3>
+            <% end %>
+          <% if product.season_start? && product.season_end? %>
+          <p><%= product.season_start_month %> - <%= product.season_end_month %></p>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  <% else %>
+    <%= link_to product_path(product, search: params[:search].present? ? params[:search][:query] : "") do %>
+      <div class="card-product">
+        <i class="fas fa-heart heart-full card-product-heart"></i>
+        <%= image_tag product.photo, class:"card-product-img" %>
+        <div class="card-product-body">
+            <% if product.name.length > 10 %>
+              <h3><%= product.name[0..9]%>..</h3>
+            <% else %>
+              <h3><%= product.name%></h3>
+            <% end %>
+          <% if product.season_start? && product.season_end? %>
+          <p><%= product.season_start_month %> - <%= product.season_end_month %></p>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
 </div>
 
