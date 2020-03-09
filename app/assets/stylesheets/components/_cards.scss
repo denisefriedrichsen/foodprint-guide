@@ -2,10 +2,33 @@
 // product-card
 .card-product {
   position: relative;
+  border-radius: 20px;
 }
 
 .card-product-not-available {
-  position: relative;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  border-radius: 20px;
+  height: 230px;
+  width: 100%;
+  box-shadow: inset 0 0 0 100vw rgba(250,250,250,0.5);
+}
+
+.card-product-not-available-label {
+  background-color: white;
+  position: absolute;
+  height: 40px;
+  width: 120px;
+  top: 18px;
+  left: 0px;
+  border-radius: 0 4px 4px 0px;
+  color: $gold;
+  text-align: left;
+  font-size: 14px;
+  vertical-align: middle;
+  line-height: initial;
+  padding: 3px 10px 3px 16px;
 }
 
 .card-product-img {
