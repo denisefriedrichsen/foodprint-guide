@@ -1,0 +1,18 @@
+.info-window {
+  h4 {
+    color: $olive;
+    font-size: 12px;
+  }
+  a {
+    text-decoration: none;
+    color: $olive;
+  }
+}
+
+.info-window-img {
+  height: 50px;
+  width: 80px;
+  border-radius: 20px;
+  background-color: $olive;
+  object-fit: cover;
+}

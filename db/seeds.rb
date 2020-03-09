@@ -29,7 +29,10 @@ product_seed_json['feed']['entry'].each do |seed|
     season_start: seed['gsx$seasonstart']['$t'].to_i,
     season_end: seed['gsx$seasonend']['$t'].to_i,
     content: seed['gsx$content']['$t'],
-    photo: "https://res.cloudinary.com/teamleia/image/upload/v1583248241/foodprint/products/#{seed['gsx$photo']['$t']}.jpg"
+    fact1: seed['gsx$fact1']['$t'],
+    fact2: seed['gsx$fact2']['$t'],
+    fact3: seed['gsx$fact3']['$t'],
+    photo: "https://res.cloudinary.com/teamleia/image/upload/v1583495845/foodprint/products/#{seed['gsx$photo']['$t']}.jpg"
   )
   product.save!
 end
@@ -53,7 +56,7 @@ producer_seed_json['feed']['entry'].each do |seed|
     address: seed['gsx$address']['$t'],
     description: seed['gsx$description']['$t'],
     website: seed['gsx$website']['$t'],
-    photo: "https://res.cloudinary.com/teamleia/image/upload/v1583259246/foodprint/producer/#{seed['gsx$photo']['$t']}.jpg"
+    photo: "https://res.cloudinary.com/teamleia/image/upload/v1583497589/foodprint/producer/#{seed['gsx$photo']['$t']}.jpg"
   )
   producer.save!
 end
@@ -89,7 +92,7 @@ post_seed_json['feed']['entry'].each do |seed|
     title: seed['gsx$title']['$t'],
     content: seed['gsx$content']['$t'],
     address: seed['gsx$address']['$t'],
-    photo: "https://res.cloudinary.com/teamleia/image/upload/v1583411780/foodprint/posts/#{seed['gsx$photo']['$t']}.jpg"
+    photo: "https://res.cloudinary.com/teamleia/image/upload/v1583497876/foodprint/posts/#{seed['gsx$photo']['$t']}.jpg"
   )
   post.save!
 end
@@ -100,7 +103,7 @@ puts Product.first['category']
 puts Product.first['season_start']
 puts Product.last['name']
 puts Product.last['season_end']
-puts Producer.first['city']
+puts Producer.last['city']
 puts Producer.last['photo']
 
 puts Post.last['title']
