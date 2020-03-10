@@ -1,10 +1,9 @@
 class ProductsController < ApplicationController
-  before_action :set_product, only: [:show]
+  before_action :set_product, only: [:show, :upvote, :downvote]
   require 'date'
 
   def index
     @title = "Seasonal products"
-    # @products = Product.where(Date.today => @product.season_start..@product.season_end )
     @products = Product.where('season_start <= ?', Date.today.strftime("%m")).where('season_end >= ?', Date.today.strftime("%m"))
     @new_season_all_products = Product.where('season_start = ?', (Date.today.strftime("%m").to_i + 1))
     @new_season_product = @new_season_all_products.sample
@@ -48,10 +47,21 @@ class ProductsController < ApplicationController
         {
           lat: current_user.latitude,
           lng: current_user.longitude,
-          infoWindow: render_to_string(partial: "info_window", locals: { producer: current_user }),
+          infoWindow: render_to_string(partial: "info_window", locals: { producer: current_user}),
           image_url: helpers.asset_url('home-marker.svg')
         }
     end
+  end
+
+  def upvote
+
+    @product.liked_by(current_user)
+    redirect_to products_path
+  end
+
+  def downvote
+    @product.unliked_by(current_user)
+    redirect_to products_path
   end
 
   private

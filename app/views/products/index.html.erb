@@ -1,7 +1,6 @@
 <div class="container-fluid">
   <br>
     <%= render 'shared/banner-featured', collection: @new_season_product, as: :new_season_product %>
-
     <div class="products-index-current-month">
       <h3 class ="current_month">This is what <strong> <%= Date::MONTHNAMES[Date.today.month] %> </strong> brings in
         <strong>
@@ -13,16 +12,17 @@
         </strong> on your plate</h3>
       </div>
 
-
     <div class="product-producer">
       <div class="mytab-div">
         <ul class="nav nav-tabs products d-flex justify-content-between mt-3 pb-3" id="myTab" role="tablist">
           <li class="nav-item">
             <a class="nav-link -border active" id="fruits-tab" data-toggle="tab" href="#fruits" role="tab" aria-controls="fruits" aria-selected="true"> <%= image_tag "fruits.svg", class: "category" %></a>
           </li>
+
           <li class="nav-item">
             <a class="nav-link -border" id="vegetables-tab" data-toggle="tab" href="#vegetables" role="tab" aria-controls="vegetables" aria-selected="false"> <%= image_tag "vegetables.svg", class: "category" %></a>
           </li>
+
           <li class="nav-item">
             <a class="nav-link -border" id="cereals-tab" data-toggle="tab" href="#cereals" role="tab" aria-controls="cereals" aria-selected="false"> <%= image_tag "cereals.svg", class: "category" %></a>
           </li>
@@ -37,42 +37,41 @@
       </div>
 
       <div class="tab-content" id="myTabContent">
-        <div class="tab-pane fade show active" id="fruits" role="tabpanel" aria-labelledby="list-tab">
-          <div class="container">
-            <div class="row">
-              <%= render partial: 'shared/product-card', collection: @fruits, as: :product %>
-            </div>
+      <div class="tab-pane fade show active" id="fruits" role="tabpanel" aria-labelledby="list-tab">
+        <div class="container">
+          <div class="row">
+            <%= render partial: 'shared/product-card', collection: @fruits, as: :product %>
           </div>
         </div>
-        <div class="tab-pane fade" id="vegetables" role="tabpanel" aria-labelledby="maps-tab">
-          <div class="container">
-            <div class="row">
-              <%= render partial: 'shared/product-card', collection: @vegetables, as: :product %>
-            </div>
+      </div>
+      <div class="tab-pane fade" id="vegetables" role="tabpanel" aria-labelledby="maps-tab">
+        <div class="container">
+          <div class="row">
+            <%= render partial: 'shared/product-card', collection: @vegetables, as: :product %>
           </div>
         </div>
-        <div class="tab-pane fade" id="cereals" role="tabpanel" aria-labelledby="maps-tab">
-          <div class="container">
-            <div class="row">
-              <%= render partial: 'shared/product-card', collection: @cereals, as: :product %>
-            </div>
+      </div>
+      <div class="tab-pane fade" id="cereals" role="tabpanel" aria-labelledby="maps-tab">
+        <div class="container">
+          <div class="row">
+            <%= render partial: 'shared/product-card', collection: @cereals, as: :product %>
           </div>
         </div>
-        <div class="tab-pane fade" id="dairy" role="tabpanel" aria-labelledby="maps-tab">
-          <div class="container">
-            <div class="row">
-              <%= render partial: 'shared/product-card', collection: @dairy, as: :product %>
-            </div>
+      </div>
+      <div class="tab-pane fade" id="dairy" role="tabpanel" aria-labelledby="maps-tab">
+        <div class="container">
+          <div class="row">
+            <%= render partial: 'shared/product-card', collection: @dairy, as: :product %>
           </div>
         </div>
-        <div class="tab-pane fade" id="meat" role="tabpanel" aria-labelledby="maps-tab">
-         <div class="container">
+      </div>
+      <div class="tab-pane fade" id="meat" role="tabpanel" aria-labelledby="maps-tab">
+        <div class="container">
           <div class="row">
             <%= render partial: 'shared/product-card', collection: @meat, as: :product %>
           </div>
         </div>
       </div>
-
     </div>
   </div>
 </div>

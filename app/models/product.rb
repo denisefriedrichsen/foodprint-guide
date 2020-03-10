@@ -1,4 +1,5 @@
 class Product < ApplicationRecord
+  acts_as_votable
   validates :name, presence: true
   validates :category, inclusion: {in: %w(fruits vegetables cereals dairy meat)}
   validates :season_start, presence: true
