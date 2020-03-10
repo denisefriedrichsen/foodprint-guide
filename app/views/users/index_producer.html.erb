@@ -1,10 +1,9 @@
-<h3>favourite producers</h3>
-
 <div class="container-fluid">
-
-  <%= render partial: 'shared/producer-card', collection: @producers, as: :producer %>
-<%# else %>
-  <%#= render partial: 'shared/product-card', collection: @favourite_products, as: :product %>
- <%# end %>
+  <div class="container">
+    <div class="row">
+      <%= render partial: 'shared/producer-card', collection: @producers, as: :producer %>
+    </div>
+  </div>
 </div>
+
 

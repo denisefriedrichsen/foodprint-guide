@@ -1,7 +1,7 @@
 <div class="container-fluid">
   <br>
   <div id="header">
-    <h1>Hello Marian!</h1>
+    <h1>Hello <%= current_user.username %> !</h1>
     <h4>How are you today?</h4>
   </div>
   <div class="newsfeed-menu">
@@ -24,8 +24,6 @@
       <img id="producer_icon" src="assets/producer_icon.svg" alt="producer_marker">
     </div>
   </div>
-
-
 
   <br>
   <h2 id="updates">Updates</h2>

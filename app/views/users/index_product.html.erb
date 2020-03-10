@@ -1,5 +1,9 @@
-<h3>favourite products</h3>
 
 <div class="container-fluid">
-  <%= render partial: 'shared/product-card', collection: @products, as: :product %>
+  <div class="container">
+    <div class="row">
+      <%= render partial: 'shared/product-card', collection: @products, as: :product %>
+    </div>
+  </div>
 </div>
+

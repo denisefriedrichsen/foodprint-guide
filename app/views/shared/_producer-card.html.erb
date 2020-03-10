@@ -1,4 +1,3 @@
-<%= link_to producer_path(producer) do %>
   <div class="card-producer">
       <% if current_user.voted_for? producer  %>
         <%= link_to producer_downvote_path(producer), method: :patch, class: "button is-link" do %>
@@ -15,6 +14,7 @@
       <% end %>
     <%= image_tag producer.photo, class:"card-producer-img" %>
     <div class="card-producer-body">
+<%= link_to producer_path(producer) do %>
       <h3><%=producer.company_name%></h3>
       <div class="card-producer-address">
         <% if producer.street.length > 15 %>
@@ -33,5 +33,5 @@
         <% end %>
       </div>
     </div>
-  </div>
-<% end %>
+  <% end %>
+</div>
