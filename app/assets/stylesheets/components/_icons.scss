@@ -44,6 +44,14 @@
   font-size: 30px;
 }
 
+.category-batch {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background-color: $gold;
+  color: white;
+}
+
 .nav-tabs .nav-link.-border.active, .nav-tabs .nav-item.show .nav-link {
   border: 2px solid $gold !important;
   border-radius: 10px;
