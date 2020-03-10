@@ -18,15 +18,12 @@
   </div>
 
 
-<div class=“producer-show”>
-    <br>
-    <% if @post.nil? %>
-      <div></div>
-    <% else %>
+  <% unless @post.nil? %>
+    <div class=“producer-show”>
       <h2 class="updates">Latest Updates</h2>
-        <%= render partial: 'shared/post-card', object: @post, as: :post%>
-    <% end %>
-</div>
+      <%= render partial: 'shared/post-card', object: @post, as: :post%>
+    </div>
+  <% end %>
 
   <div class="producer-show">
     <br>

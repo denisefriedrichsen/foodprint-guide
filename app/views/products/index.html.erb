@@ -7,7 +7,7 @@
           <% if params[:search].nil? %>
             Berlin
           <% else %>
-            <%= params[:search][:query].split(",")[0] %>
+            <%= params[:search][:query].split(",")[0].capitalize %>
           <% end %>
         </strong> on your plate</h3>
       </div>
@@ -16,7 +16,12 @@
       <div class="mytab-div">
         <ul class="nav nav-tabs products d-flex justify-content-between mt-3 pb-3" id="myTab" role="tablist">
           <li class="nav-item">
-            <a class="category-icon nav-link -border active" id="fruits-tab" data-toggle="tab" href="#fruits" role="tab" aria-controls="fruits" aria-selected="true"> <%= image_tag "fruits.svg", class: "category" %> <span class="badge badge-light category-batch">4</span></a>
+            <a class="category-icon nav-link -border active" id="fruits-tab" data-toggle="tab" href="#fruits" role="tab" aria-controls="fruits" aria-selected="true">
+              <div>
+                <%= image_tag "fruits.svg", class: "category" %>
+              </div>
+              <span class="badge badge-light category-batch">4</span>
+            </a>
           </li>
 
           <li class="nav-item">
