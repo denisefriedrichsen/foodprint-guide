@@ -11,28 +11,11 @@
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
   <body>
-
-    <% if @navbar_producer  %>
-      <%= render 'shared/navbar_producer' %>
-    <% elsif @navbar_product  %>
-      <%= render 'shared/navbar_product' %>
-    <% elsif @navbar_seasonal  %>
-      <%= render 'shared/navbar_seasonal' %>
-    <% elsif @navbar_newsfeed  %>
-      <%= render 'shared/navbar_newsfeed' %>
-       <% elsif @navbar_favourite_producer %>
-      <%= render 'shared/navbar_favourite_producer' %>
-       <% elsif @navbar_favourite_product  %>
-      <%= render 'shared/navbar_favourite_product' %>
-    <% else %>
-      <%= render 'shared/navbar' %>
-    <% end %>
-
+    <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
     <%= yield %>
     <%= render 'shared/footer' %>
     <%= javascript_include_tag 'application' %>
-
     <%= javascript_pack_tag 'application' %>
   </body>
 </html>
