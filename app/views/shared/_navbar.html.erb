@@ -3,7 +3,11 @@
     <%= image_tag "logo-foodprint.png" %>
   <% end %>
   <% if @title %>
-    <h1><%= @title %></h1>
+    <% if @title.length > 12 %>
+      <h3><%= @title[0..11]%>..</h3>
+    <% else %>
+      <h3><%= @title%></h3>
+    <% end %>
   <% else %>
     <h1>FOOD<span>PRINT</h1></span>
    <% end %>
