@@ -1,5 +1,6 @@
 class Producer < ApplicationRecord
   # has_one_attached :photo
+  acts_as_votable
   validates :company_name, presence: true
   validates :owner_name, presence: true
   validates :address, presence: true

@@ -20,6 +20,10 @@
       <%= render 'shared/navbar_seasonal' %>
     <% elsif @navbar_newsfeed  %>
       <%= render 'shared/navbar_newsfeed' %>
+       <% elsif @navbar_favourite_producer %>
+      <%= render 'shared/navbar_favourite_producer' %>
+       <% elsif @navbar_favourite_product  %>
+      <%= render 'shared/navbar_favourite_product' %>
     <% else %>
       <%= render 'shared/navbar' %>
     <% end %>

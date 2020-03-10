@@ -1,10 +1,11 @@
 <div class="col-6 mt-3 px-2">
+
   <% if params[:search].present? %>
     <% @producers = Producer.joins(:offerings).where(offerings: { product_id: product.id }).near(params[:search][:query], 200) %>
     <% if @producers.empty? %>
-      <%= link_to product_path(product, search: params[:search].present? ? params[:search][:query] : "") do %>
         <div class="card-product">
           <i class="fas fa-heart heart-full card-product-heart"></i>
+          <%= link_to product_path(product, search: params[:search].present? ? params[:search][:query] : "") do %>
           <%= image_tag product.photo, class:"card-product-img" %>
           <div class="card-product-body">
               <% if product.name.length > 10 %>
@@ -18,12 +19,24 @@
             <div class="card-product-not-available-label">Not available in your area</div>
             <div class="card-product-not-available"></div>
           </div>
-        </div>
-      <% end %>
+        <% end %>
+      </div>
     <% else%>
-      <%= link_to product_path(product, search: params[:search].present? ? params[:search][:query] : "") do %>
         <div class="card-product">
-          <i class="fas fa-heart heart-full card-product-heart"></i>
+          <% if current_user.voted_for? product  %>
+            <%= link_to product_downvote_path(product), method: :patch, class: "button is-link" do %>
+              <span class="icon">
+                <i class="fas fa-heart heart-full card-product-heart"></i>
+              </span>
+            <% end %>
+          <% else %>
+            <%= link_to product_upvote_path(product), method: :patch, class: "button is-link" do %>
+              <span class="icon">
+                <i class="fas fa-heart heart-empty card-product-heart"></i>
+              </span>
+            <% end %>
+          <% end %>
+      <%= link_to product_path(product, search: params[:search].present? ? params[:search][:query] : "") do %>
           <%= image_tag product.photo, class:"card-product-img" %>
           <div class="card-product-body">
               <% if product.name.length > 10 %>
@@ -35,15 +48,27 @@
             <p><%= product.season_start_month %> - <%= product.season_end_month %></p>
             <% end %>
           </div>
-        </div>
-      <% end %>
+        <% end %>
+      </div>
     <% end %>
   <% else %>
     <% @producers = Producer.joins(:offerings).where(offerings: { product_id: product.id }).near(current_user, 200) %>
     <% if @producers.empty? %>
-      <%= link_to product_path(product, search: params[:search].present? ? params[:search][:query] : "") do %>
         <div class="card-product">
-          <i class="fas fa-heart heart-full card-product-heart"></i>
+          <% if current_user.voted_for? product  %>
+            <%= link_to product_downvote_path(product), method: :patch, class: "button is-link" do %>
+              <span class="icon">
+                <i class="fas fa-heart heart-full card-product-heart"></i>
+              </span>
+           <% end %>
+         <% else %>
+            <%= link_to product_upvote_path(product), method: :patch, class: "button is-link" do %>
+              <span class="icon">
+                <i class="fas fa-heart heart-empty card-product-heart"></i>
+              </span>
+            <% end %>
+          <% end %>
+          <%= link_to product_path(product, search: params[:search].present? ? params[:search][:query] : "") do %>
           <%= image_tag product.photo, class:"card-product-img" %>
           <div class="card-product-body">
               <% if product.name.length > 10 %>
@@ -58,12 +83,36 @@
             <div class="card-product-not-available">
             </div>
           </div>
-        </div>
-      <% end %>
+        <% end %>
+      </div>
     <% else%>
-      <%= link_to product_path(product, search: params[:search].present? ? params[:search][:query] : "") do %>
         <div class="card-product">
-          <i class="fas fa-heart heart-full card-product-heart"></i>
+          <% if current_user.voted_for? product  %>
+            <%= link_to product_downvote_path(product), method: :patch, class: "button is-link" do %>
+              <span class="icon">
+                <i class="fas fa-heart heart-full card-product-heart"></i>
+              </span>
+            <% end %>
+          <% else %>
+            <%= link_to product_upvote_path(product), method: :patch, class: "button is-link" do %>
+              <span class="icon">
+                <% if current_user.voted_for? product  %>
+                  <%= link_to product_downvote_path(product), method: :patch, class: "button is-link" do %>
+                    <span class="icon">
+                      <i class="fas fa-heart heart-full card-product-heart"></i>
+                    </span>
+                  <% end %>
+                <% else %>
+                  <%= link_to product_upvote_path(product), method: :patch, class: "button is-link" do %>
+                    <span class="icon">
+                      <i class="fas fa-heart heart-empty card-product-heart"></i>
+                    </span>
+                  <% end %>
+                <% end %>
+              </span>
+            <% end %>
+          <% end %>
+          <%= link_to product_path(product, search: params[:search].present? ? params[:search][:query] : "") do %>
           <%= image_tag product.photo, class:"card-product-img" %>
           <div class="card-product-body">
               <% if product.name.length > 10 %>
@@ -75,8 +124,8 @@
             <p><%= product.season_start_month %> - <%= product.season_end_month %></p>
             <% end %>
           </div>
-        </div>
-      <% end %>
+        <% end %>
+      </div>
     <% end %>
   <% end %>
 </div>
