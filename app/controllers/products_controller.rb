@@ -3,7 +3,7 @@ class ProductsController < ApplicationController
   require 'date'
 
   def index
-    @navbar_seasonal = true
+    @title = "Seasonal products"
     # @products = Product.where(Date.today => @product.season_start..@product.season_end )
     @products = Product.where('season_start <= ?', Date.today.strftime("%m")).where('season_end >= ?', Date.today.strftime("%m"))
     @new_season_all_products = Product.where('season_start = ?', (Date.today.strftime("%m").to_i + 1))
@@ -16,7 +16,6 @@ class ProductsController < ApplicationController
   end
 
   def show
-    @navbar_product = true
     if params[:search].present?
       @producers = Producer.joins(:offerings).where(offerings: { product_id: @product.id }).near(params[:search], 200)
     else
@@ -59,6 +58,7 @@ class ProductsController < ApplicationController
 
   def set_product
       @product = Product.find(params[:id])
+      @title = @product.name
   end
 end
 

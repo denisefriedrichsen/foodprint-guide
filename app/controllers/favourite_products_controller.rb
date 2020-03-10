@@ -10,6 +10,7 @@ class FavouriteProductsController < ApplicationController
 
   def index
     @favourite_products = FavouriteProduct.where(user: current_user)
+    @title = "Favourite products"
   end
 
   def destroy

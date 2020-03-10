@@ -11,18 +11,7 @@
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
   <body>
-
-    <% if @navbar_producer  %>
-      <%= render 'shared/navbar_producer' %>
-    <% elsif @navbar_product  %>
-      <%= render 'shared/navbar_product' %>
-    <% elsif @navbar_seasonal  %>
-      <%= render 'shared/navbar_seasonal' %>
-    <% elsif @navbar_newsfeed  %>
-      <%= render 'shared/navbar_newsfeed' %>
-    <% else %>
-      <%= render 'shared/navbar' %>
-    <% end %>
+    <%= render 'shared/navbar' %>
 
     <%= render 'shared/flashes' %>
     <%= yield %>
