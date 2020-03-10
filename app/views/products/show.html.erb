@@ -1,19 +1,22 @@
 <div class="product-show container-fluid">
   <%= render 'shared/banner-show-product' %>
-  <div class="product-season">
-    <p>Season: <%= @product.season_start_month %> - <%= @product.season_end_month %></p>
-  </div>
 
-  <div class="product-content">
-    <p><%= @product.content %></p>
-  </div>
+  <div class="padding">
+    <div class="product-season">
+      <p>Season: <%= @product.season_start_month %> - <%= @product.season_end_month %></p>
+    </div>
 
-  <div>
-    <ul>
-      <li><i class="fas fa-info-circle info"></i>Fact 1: <%= @product.fact1 %></li>
-      <li><i class="fas fa-info-circle info"></i>Fact 2: <%= @product.fact2 %></li>
-      <li><i class="fas fa-info-circle info"></i>Fact 3: <%= @product.fact3 %></li>
-    </ul>
+    <div class="product-content">
+      <p><%= @product.content %></p>
+    </div>
+
+    <div>
+      <ul>
+        <li><i class="fas fa-info-circle info"></i>Fact 1: <%= @product.fact1 %></li>
+        <li><i class="fas fa-info-circle info"></i>Fact 2: <%= @product.fact2 %></li>
+        <li><i class="fas fa-info-circle info"></i>Fact 3: <%= @product.fact3 %></li>
+      </ul>
+    </div>
   </div>
 
   <div class="product-producer">

@@ -1,40 +1,52 @@
 <div class="container-fluid">
-  <%= render 'shared/banner-show-producer' %>
 
-  <div class="product-season">
-    <p><%= @producer.address%></p>
-  </div>
+  <% if params[:from_linkto].present? %>
+    <div class=“producer-show” id="producer-show-all-posts">
+      <%= link_to "Back", producer_path(@producer) , class: "btn-gold"%>
+      <h2 class="updates">All posts</h2>
+      <%= render partial: 'shared/post-card', collection: @all_posts, as: :post %>
+    </div>
+  <% else %>
+    <%= render 'shared/banner-show-producer' %>
+    <div class="padding">
+      <div class="product-season">
+        <p><%= @producer.address%></p>
+      </div>
 
-  <div>
-    <p><%= @producer.description %></p>
-  </div>
+      <div>
+        <p><%= @producer.description %></p>
+      </div>
 
-  <div>
-    <ul>
-      <li><i class="fas fa-info-circle info"></i>Distance: 12km</li>
-      <li><i class="fas fa-info-circle info"></i>Region: <%= @producer.region %></li>
-      <li><i class="fas fa-info-circle info"></i>Website: <%= @producer.website %></li>
-    </ul>
-  </div>
+      <div>
+        <ul>
+          <li><i class="fas fa-info-circle info"></i>Distance: 12km</li>
+          <li><i class="fas fa-info-circle info"></i>Region: <%= @producer.region %></li>
+          <li><i class="fas fa-info-circle info"></i>Website: <%= @producer.website %></li>
+        </ul>
+      </div>
+    </div>
 
 
-<div class=“producer-show”>
-    <br>
-    <% if @post.nil? %>
-      <div></div>
-    <% else %>
-      <h2 class="updates">Latest Updates</h2>
+    <% unless @post.nil? %>
+      <div class=“producer-show”>
+        <h2 class="updates">Latest Updates</h2>
         <%= render partial: 'shared/post-card', object: @post, as: :post%>
+        <div class="producer-show-button">
+          <%= link_to "Show all posts", producer_path(@producer, from_linkto: true) , class: "btn-gold"%>
+        </div>
+      </div>
     <% end %>
+
+    <div class="producer-show">
+      <br>
+      <h2>Product Overview</h2>
+    </div>
+
+    <div class="row padding">
+      <%= render partial: 'shared/product-card', collection: @products, as: :product %>
+    </div>
+
+  <% end %>
 </div>
 
-  <div class="producer-show">
-    <br>
-    <h2>Product Overview</h2>
-  </div>
 
-  <div class="row">
-    <%= render partial: 'shared/product-card', collection: @products, as: :product %>
-  </div>
-
-</div>
