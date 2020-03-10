@@ -32,7 +32,7 @@ product_seed_json['feed']['entry'].each do |seed|
     fact1: seed['gsx$fact1']['$t'],
     fact2: seed['gsx$fact2']['$t'],
     fact3: seed['gsx$fact3']['$t'],
-    photo: "https://res.cloudinary.com/teamleia/image/upload/v1583495845/foodprint/products/#{seed['gsx$photo']['$t']}.jpg"
+    photo: "https://res.cloudinary.com/teamleia/image/upload/v1583844346/foodprint/products/#{seed['gsx$photo']['$t']}.jpg"
   )
   product.save!
 end
@@ -56,7 +56,7 @@ producer_seed_json['feed']['entry'].each do |seed|
     address: seed['gsx$address']['$t'],
     description: seed['gsx$description']['$t'],
     website: seed['gsx$website']['$t'],
-    photo: "https://res.cloudinary.com/teamleia/image/upload/v1583497589/foodprint/producer/#{seed['gsx$photo']['$t']}.jpg"
+    photo: "https://res.cloudinary.com/teamleia/image/upload/v1583842494/foodprint/producer/#{seed['gsx$photo']['$t']}.jpg"
   )
   producer.save!
 end

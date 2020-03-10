@@ -12,6 +12,11 @@ class ProductsController < ApplicationController
     @cereals = Product.where('category = ? AND season_start <= ? AND season_end >= ?', 'cereals', Date.today.strftime("%m").to_i, Date.today.strftime("%m").to_i)
     @dairy = Product.where('category = ? AND season_start <= ? AND season_end >= ?', 'dairy', Date.today.strftime("%m").to_i, Date.today.strftime("%m").to_i)
     @meat = Product.where('category = ? AND season_start <= ? AND season_end >= ?', 'meat', Date.today.strftime("%m").to_i, Date.today.strftime("%m").to_i)
+    @fruit_count = @fruits.count
+    @vegetable_count = @vegetables.count
+    @cereal_count = @cereals.count
+    @dairy_count = @dairy.count
+    @meat_count = @meat.count
   end
 
   def show
