@@ -2,7 +2,7 @@ footer {
   background: $olive;
   display: flex;
   align-items: center;
-  height: 60px;
+  height: 40px;
   padding: 0 20px;
   color: white;
   width: 100%;
@@ -14,14 +14,14 @@ footer {
   align-items: center;
   justify-content: space-between;
 }
-.footer-links a {
+.footer-link-item {
   color: white;
   opacity: 0.8;
   text-decoration: none;
-  font-size: 24px;
   padding: 0px 10px;
-  font-size: 16px;
+  font-size: 14px;
 }
+
 .footer-links a:hover {
   opacity: 1;
 }
