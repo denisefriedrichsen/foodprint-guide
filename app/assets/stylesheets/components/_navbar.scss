@@ -1,6 +1,7 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
+  height: 60px;
   h1 {
     font-size: 1.5rem;
     margin-bottom: 0;
@@ -57,7 +58,7 @@
 
 @media (max-width: 992px) {
     .navbar-collapse {
-        position: absolute;
+        position: fixed;
         top: 0px;
         left: 100%;
         padding-left: 15px;
