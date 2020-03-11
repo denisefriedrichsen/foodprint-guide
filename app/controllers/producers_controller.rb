@@ -10,14 +10,19 @@ class ProducersController < ApplicationController
   end
 
     def upvote
-
     @producer.liked_by(current_user)
-    redirect_to producer_path
+     respond_to do |format|
+      format.html { redirect_to producer_path }
+      format.js
+    end
   end
 
   def downvote
     @producer.unliked_by(current_user)
-    redirect_to producer_path
+     respond_to do |format|
+      format.html { redirect_to producer_path }
+      format.js
+    end
   end
 
 

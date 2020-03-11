@@ -1,7 +1,7 @@
 <div class="container-fluid">
   <div class="container">
     <div class="row">
-      <%= render partial: 'shared/product-card', collection: @products, as: :product %>
+      <%= render partial: 'shared/product-card', collection: @products, as: :product, locals: { to_delete: true } %>
     </div>
   </div>
 </div>

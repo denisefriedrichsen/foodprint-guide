@@ -42,35 +42,35 @@
       <div class="tab-pane fade show active" id="fruits" role="tabpanel" aria-labelledby="list-tab">
         <div class="container">
           <div class="row">
-            <%= render partial: 'shared/product-card', collection: @fruits, as: :product %>
+            <%= render partial: 'shared/product-card', collection: @fruits, as: :product, locals: { to_delete: false } %>
           </div>
         </div>
       </div>
       <div class="tab-pane fade" id="vegetables" role="tabpanel" aria-labelledby="maps-tab">
         <div class="container">
           <div class="row">
-            <%= render partial: 'shared/product-card', collection: @vegetables, as: :product %>
+            <%= render partial: 'shared/product-card', collection: @vegetables, as: :product, locals: { to_delete: false } %>
           </div>
         </div>
       </div>
       <div class="tab-pane fade" id="cereals" role="tabpanel" aria-labelledby="maps-tab">
         <div class="container">
           <div class="row">
-            <%= render partial: 'shared/product-card', collection: @cereals, as: :product %>
+            <%= render partial: 'shared/product-card', collection: @cereals, as: :product, locals: { to_delete: false } %>
           </div>
         </div>
       </div>
       <div class="tab-pane fade" id="dairy" role="tabpanel" aria-labelledby="maps-tab">
         <div class="container">
           <div class="row">
-            <%= render partial: 'shared/product-card', collection: @dairy, as: :product %>
+            <%= render partial: 'shared/product-card', collection: @dairy, as: :product, locals: { to_delete: false } %>
           </div>
         </div>
       </div>
       <div class="tab-pane fade" id="meat" role="tabpanel" aria-labelledby="maps-tab">
         <div class="container">
           <div class="row">
-            <%= render partial: 'shared/product-card', collection: @meat, as: :product %>
+            <%= render partial: 'shared/product-card', collection: @meat, as: :product, locals: { to_delete: false } %>
           </div>
         </div>
       </div>

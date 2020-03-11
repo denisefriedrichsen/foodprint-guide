@@ -170,3 +170,9 @@
   right: 10px;
 }
 
+.like-button {
+  &.-hide-heart {
+    display: none;
+    z-index: -1000;
+  }
+}
