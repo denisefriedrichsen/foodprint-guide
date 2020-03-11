@@ -1,6 +1,4 @@
 <div class="container-fluid">
-
-
   <% if params[:from_linkto].present? %>
     <div class=“producer-show” id="producer-show-all-posts">
       <%= link_to "Back", producer_path(@producer) , class: "btn-gold"%>
@@ -8,7 +6,9 @@
       <%= render partial: 'shared/post-card', collection: @all_posts, as: :post %>
     </div>
   <% else %>
+
     <%= render 'shared/banner-show-producer', locals: { to_delete: true } %>
+
     <div class="padding">
       <div class="product-season">
         <p><%= @producer.address%></p>
@@ -47,6 +47,7 @@
     <div class="row padding">
       <%= render partial: 'shared/product-card', collection: @products, as: :product, locals: { to_delete: false } %>
     </div>
+
   <% end %>
 </div>
 
