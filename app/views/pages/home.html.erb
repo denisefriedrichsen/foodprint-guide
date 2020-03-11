@@ -1,7 +1,7 @@
 <div class="container-fluid">
   <%= render 'shared/banner-home' %>
   <div class="workflow-banner">
-    <img src="assets/workflow_home.svg" alt="workflow_home">
+    <%= image_tag "workflow_home.svg", alt: "Chart of how the service works" %>
   </div>
   <div class="workflow-search">
   <%= simple_form_for :search, url: products_path, method: :get do |f| %>

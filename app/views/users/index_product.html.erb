@@ -1,7 +1,9 @@
 <div class="container-fluid">
 
   <% if @products == [] %>
-    <div class=“alert-warning” role=“alert”>You don't have any favourite products yet.</div>
+      <div>
+        <div class=“alert-warning” role=“alert”>You don't have any favourite products yet.</div>
+      </div>
   <% else %>
 
     <% @products.each do |product| %>
