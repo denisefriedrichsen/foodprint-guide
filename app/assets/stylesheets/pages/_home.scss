@@ -1,1 +1,12 @@
 // Specific CSS for your home-page
+.workflow-banner img {
+  margin-top: 10px;
+}
+
+.workflow-search {
+ display: flex;
+ justify-content: space-around;
+  .workflow-search-form {
+    margin-top: 40px !important;
+  }
+}

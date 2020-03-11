@@ -6,7 +6,7 @@ class ProducersController < ApplicationController
     @producer = Producer.find(params[:id])
     @products = Product.joins(:offerings).where(offerings: { producer_id: @producer.id })
     @post = Post.where(producer_id: @producer.id).last
-    @navbar_producer = true
+    @all_posts = Post.where(producer_id: @producer.id)
   end
 
     def upvote
@@ -34,5 +34,6 @@ class ProducersController < ApplicationController
 
    def set_producer
       @producer = Producer.find(params[:id])
+      @title = @producer.company_name
   end
 end

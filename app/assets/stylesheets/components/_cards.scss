@@ -137,10 +137,17 @@
 
 .card-post-img {
   width: 100%;
-  height: 160px;
+  height: 160px !important;
   border-radius: 20px 20px 0px 0px;
   object-fit: cover;
 }
+
+.card-post-map {
+  border-radius: 20px 20px 0px 0px;
+  object-fit: cover;
+  height: 160px;
+}
+
 
 .card-post-body {
   max-width: 100%;

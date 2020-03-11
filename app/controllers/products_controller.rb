@@ -3,7 +3,6 @@ class ProductsController < ApplicationController
   require 'date'
 
   def index
-    @navbar_seasonal = true
     @products = Product.where('season_start <= ?', Date.today.strftime("%m")).where('season_end >= ?', Date.today.strftime("%m"))
     @new_season_all_products = Product.where('season_start = ?', (Date.today.strftime("%m").to_i + 1))
     @new_season_product = @new_season_all_products.sample
@@ -12,10 +11,14 @@ class ProductsController < ApplicationController
     @cereals = Product.where('category = ? AND season_start <= ? AND season_end >= ?', 'cereals', Date.today.strftime("%m").to_i, Date.today.strftime("%m").to_i)
     @dairy = Product.where('category = ? AND season_start <= ? AND season_end >= ?', 'dairy', Date.today.strftime("%m").to_i, Date.today.strftime("%m").to_i)
     @meat = Product.where('category = ? AND season_start <= ? AND season_end >= ?', 'meat', Date.today.strftime("%m").to_i, Date.today.strftime("%m").to_i)
+    @fruit_count = @fruits.count
+    @vegetable_count = @vegetables.count
+    @cereal_count = @cereals.count
+    @dairy_count = @dairy.count
+    @meat_count = @meat.count
   end
 
   def show
-    @navbar_product = true
     if params[:search].present?
       @producers = Producer.joins(:offerings).where(offerings: { product_id: @product.id }).near(params[:search], 200)
     else

@@ -12,8 +12,13 @@
 
     <%= image_tag producer.photo, class:"card-producer-img" %>
     <div class="card-producer-body">
-    <%= link_to producer_path(producer) do %>
-      <h3><%=producer.company_name%></h3>
+
+<%= link_to producer_path(producer) do %>
+      <% if producer.company_name.length > 10 %>
+        <h3><%= producer.company_name[0..9]%>..</h3>
+      <% else %>
+        <h3><%= producer.company_name%></h3>
+      <% end %>
       <div class="card-producer-address">
         <% if producer.street.length > 15 %>
           <p><%= producer.street[0..14]%>..</p>

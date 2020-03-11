@@ -1,6 +1,7 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
+  height: 60px;
   h1 {
     font-size: 1.5rem;
     margin-bottom: 0;
@@ -13,23 +14,33 @@
   }
 }
 
+.btn-outline-success {
+  border-style: none;
+}
+
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 40px;
+  width: 30px;
+  margin-left: -5px;
 }
 
 .navbar-toggler {
   border: none;
   color: $gold !important;
-
+  width: 30px;
+  margin-right: 5px;
 }
+
+.dropdown-toggle::after {
+    display: none;
+}
+
 .navbar-toggler-icon {
   border: none;
   color: $gold !important;
-
 }
 .sticky {
   position: fixed;
@@ -41,10 +52,13 @@
   padding-top: 60px;
 }
 
+.search-navbar {
+  margin-top: 10px !important;
+}
 
 @media (max-width: 992px) {
     .navbar-collapse {
-        position: absolute;
+        position: fixed;
         top: 0px;
         left: 100%;
         padding-left: 15px;
@@ -66,7 +80,7 @@
         #home {
           font-weight: bold;
           margin-top: 50px;
-          margin-bottom: 50px;
+          margin-bottom: 20px;
         }
 
         #logout {
@@ -78,8 +92,8 @@
         }
         #burger {
           position: relative;
-          top: 15px;
-          left: 135px;
+          top: 10px;
+          left: 260px;
           color: $gold !important;
         }
     }
