@@ -2,7 +2,6 @@ class PostsController < ApplicationController
 before_action :set_user
 
   def index
-    @title = "Newsfeed"
     @votes = @user.find_liked_items
     @producers = @votes.filter { |item| item.class.to_s == "Producer"}
     @posts = []

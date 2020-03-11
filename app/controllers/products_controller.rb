@@ -3,7 +3,6 @@ class ProductsController < ApplicationController
   require 'date'
 
   def index
-    @title = "Seasonal products"
     @products = Product.where('season_start <= ?', Date.today.strftime("%m")).where('season_end >= ?', Date.today.strftime("%m"))
     @new_season_all_products = Product.where('season_start = ?', (Date.today.strftime("%m").to_i + 1))
     @new_season_product = @new_season_all_products.sample
@@ -73,7 +72,6 @@ class ProductsController < ApplicationController
 
   def set_product
       @product = Product.find(params[:id])
-      @title = @product.name
   end
 end
 
