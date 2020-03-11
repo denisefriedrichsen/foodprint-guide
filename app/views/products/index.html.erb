@@ -6,7 +6,7 @@
       <h4 class ="current_month">This is what <strong> <%= Date::MONTHNAMES[Date.today.month] %> </strong> brings in
         <strong>
 
-          <% if params[:search].nil?%>
+          <% if params[:search].blank? || params[:search][:query].blank? %>
             Berlin
           <% else %>
             <%= params[:search][:query].split(",")[0].capitalize %>
