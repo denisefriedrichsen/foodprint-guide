@@ -1,8 +1,9 @@
 <div class="container-fluid">
+  <h3 class="title">Seasonal products</h3>
   <br>
     <%= render 'shared/banner-featured', collection: @new_season_product, as: :new_season_product %>
     <div class="products-index-current-month">
-      <h3 class ="current_month">This is what <strong> <%= Date::MONTHNAMES[Date.today.month] %> </strong> brings in
+      <h4 class ="current_month">This is what <strong> <%= Date::MONTHNAMES[Date.today.month] %> </strong> brings in
         <strong>
 
           <% if params[:search].nil?%>
@@ -10,7 +11,8 @@
           <% else %>
             <%= params[:search][:query].split(",")[0].capitalize %>
           <% end %>
-        </strong> on your plate</h3>
+        </strong> on your plate</h4>
+        <br>
       </div>
 
     <div class="product-producer">
