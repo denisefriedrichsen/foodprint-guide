@@ -27,7 +27,13 @@
 
   <br>
   <h2 id="updates">Updates</h2>
-
-      <%= render partial: 'shared/post-card', collection: @posts, as: :post %>
-    </div>
+    <% if @posts == [] %>
+      <div>
+        <div class="alert-warning" role="alert">You have no favourite producers yet.</div>
+      </div>
+    <% else %>
+      <div>
+        <%= render partial: 'shared/post-card', collection: @posts, as: :post %>
+      </div>
+    <% end %>
   </div>
