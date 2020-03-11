@@ -34,6 +34,5 @@ class ProducersController < ApplicationController
 
    def set_producer
       @producer = Producer.find(params[:id])
-      @title = @producer.company_name
   end
 end
