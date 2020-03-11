@@ -1,8 +1,95 @@
 <div class="container-fluid">
-  <div class="container">
-    <div class="row">
-      <%= render partial: 'shared/product-card', collection: @products, as: :product %>
+
+  <% if @products == [] %>
+    <div class=“alert-warning” role=“alert”>You don't have any favourite products yet.</div>
+  <% else %>
+
+    <% @products.each do |product| %>
+      <% if product.season_start <= Date.today.strftime("%m").to_i && product.season_end >= Date.today.strftime("%m").to_i %>
+        <% @products_in_season << product %>
+      <% else %>
+        <% @products_not_in_season << product %>
+      <% end %>
+    <% end %>
+
+    <div id="season">
+      <h3>In season</h3>
     </div>
-  </div>
+
+    <% unless @products_in_season == [] %>
+      <div class="container">
+        <div class="row">
+          <% @products_in_season.each do |product| %>
+            <div class="col-6 mt-3 px-2">
+              <div class="card-product">
+                <% if current_user.voted_for? product  %>
+                  <%= link_to product_downvote_path(product), method: :patch, class: "button is-link" do %>
+                    <span class="icon">
+                      <i class="fas fa-heart heart-full card-product-heart"></i>
+                    </span>
+                  <% end %>
+                <% else %>
+                  <%= link_to product_upvote_path(product), method: :patch, class: "button is-link" do %>
+                    <span class="icon">
+                      <i class="fas fa-heart heart-empty card-product-heart"></i>
+                    </span>
+                  <% end %>
+                <% end %>
+                <%= link_to product_path(product, search: params[:search].present? ? params[:search][:query] : "") do %>
+                <%= image_tag product.photo, class:"card-product-img" %>
+                <div class="card-product-body">
+                  <% if product.name.length > 10 %>
+                    <h3><%= product.name[0..9]%>..</h3>
+                  <% else %>
+                    <h3><%= product.name%></h3>
+                  <% end %>
+                  <% if product.season_start? && product.season_end? %>
+                    <p><%= product.season_start_month %> - <%= product.season_end_month %></p>
+                  <% end %>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+
+
+    <div id="season">
+      <br>
+      <h3>Not in season</h3>
+    </div>
+
+    <% unless @products_not_in_season == [] %>
+      <div class="container">
+        <div class="row">
+          <% @products_not_in_season.each do |product| %>
+            <div class="col-6 mt-3 px-2">
+              <div class="card-product">
+                <i class="fas fa-heart heart-full card-product-heart"></i>
+                <%= link_to product_path(product, search: params[:search].present? ? params[:search][:query] : "") do %>
+                  <%= image_tag product.photo, class:"card-product-img" %>
+                  <div class="card-product-body">
+                    <% if product.name.length > 10 %>
+                      <h3><%= product.name[0..9]%>..</h3>
+                    <% else %>
+                      <h3><%= product.name%></h3>
+                    <% end %>
+                    <% if product.season_start? && product.season_end? %>
+                      <p><%= product.season_start_month %> - <%= product.season_end_month %></p>
+                    <% end %>
+                    <div class="card-product-not-available"></div>
+                    <div class="card-product-not-available-label">Not in season</div>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+  <% end %>
+
+<% end %>
 </div>
 

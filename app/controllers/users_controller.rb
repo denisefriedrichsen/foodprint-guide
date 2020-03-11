@@ -3,13 +3,15 @@ class UsersController < ApplicationController
 
 
   def index_product
-    @navbar_favourite_product = true
+    @title = "Favourite products"
     @votes = @user.find_liked_items
     @products = @votes.filter { |item| item.class.to_s == "Product"}
+    @products_in_season = []
+    @products_not_in_season = []
   end
 
   def index_producer
-    @navbar_favourite_producer = true
+    @title = "Favourite producers"
     @votes = @user.find_liked_items
     @producers = @votes.filter { |item| item.class.to_s == "Producer"}
 

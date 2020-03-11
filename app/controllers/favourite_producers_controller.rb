@@ -10,7 +10,6 @@ class FavouriteProducersController < ApplicationController
 
   def index
     @favourite_producers = FavouriteProducers.where(user: current_user)
-    @title = "Favourite producers"
   end
 
   def destroy

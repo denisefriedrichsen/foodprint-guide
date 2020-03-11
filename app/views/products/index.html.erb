@@ -4,7 +4,8 @@
     <div class="products-index-current-month">
       <h3 class ="current_month">This is what <strong> <%= Date::MONTHNAMES[Date.today.month] %> </strong> brings in
         <strong>
-          <% if params[:search].nil? %>
+
+          <% if params[:search].nil?%>
             Berlin
           <% else %>
             <%= params[:search][:query].split(",")[0].capitalize %>
