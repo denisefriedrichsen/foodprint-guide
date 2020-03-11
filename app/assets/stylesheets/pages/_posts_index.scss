@@ -26,7 +26,7 @@ h1, h3, h2, h4 {
 
 .newsfeed-menu-products {
   height: 114px;
-  background-image: url('apple.svg');
+  background-image: image-url('apple.svg');
   background-size: cover;
   border-radius: 20px;
   display: flex;
@@ -71,7 +71,7 @@ h1, h3, h2, h4 {
 
 .newsfeed-menu-right {
   border-radius: 10px;
-  background-image: url('map_producers.svg');
+  background-image: image-url('map_producers.svg');
   background-size: cover;
   color: $olive;
   padding-top: 30px;
