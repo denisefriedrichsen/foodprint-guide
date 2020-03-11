@@ -1,3 +1,4 @@
+
 <div id="cardproducer-<%= producer.id %>"class="card-producer">
  <%= link_to producer_downvote_path(producer), method: :patch, class: "like-button #{'-hide-heart' if !current_user.voted_for? producer} button is-link", :data => { :'producer-id' => producer.id, "to-delete" => to_delete }, id: "producer-down-#{ producer.id}", remote: true  do %>
   <span class="icon">
@@ -6,10 +7,9 @@
 <% end %>
 <%= link_to producer_upvote_path(producer), method: :patch, class: "like-button #{'-hide-heart' if current_user.voted_for? producer} button is-link", :data => { :'producer-id' => producer.id, "to-delete" => to_delete }, id: "producer-up-#{ producer.id}", remote: true  do %>
   <span class="icon">
-    <i class="fas fa-heart heart-empty card-product-heart"></i>
+    <i class="far fa-heart heart-empty card-product-heart"></i>
   </span>
 <% end %>
-
     <%= image_tag producer.photo, class:"card-producer-img" %>
     <div class="card-producer-body">
 

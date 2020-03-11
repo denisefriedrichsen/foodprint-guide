@@ -6,7 +6,7 @@
 <% end %>
 <%= link_to product_upvote_path(product), method: :patch, class: "like-button #{'-hide-heart' if current_user.voted_for? product} button is-link", :data => { :'product-id' => product.id, "to-delete" => to_delete }, id: "product-up-#{ product.id}", remote: true  do %>
   <span class="icon">
-    <i class="fas fa-heart heart-empty card-product-heart"></i>
+    <i class="far fa-heart heart-empty card-product-heart"></i>
   </span>
 <% end %>
 </div>
