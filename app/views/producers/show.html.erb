@@ -1,5 +1,5 @@
 <div class="container-fluid">
-  <%= render 'shared/banner-show-producer'%>
+  <%= render 'shared/banner-show-producer', locals: { to_delete: true } %>
 
   <div class="product-season">
     <p><%= @producer.address%></p>
