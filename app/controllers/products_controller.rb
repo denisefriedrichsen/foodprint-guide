@@ -83,14 +83,19 @@ class ProductsController < ApplicationController
   end
 
   def upvote
-
     @product.liked_by(current_user)
-    redirect_to products_path
+    respond_to do |format|
+      format.html { redirect_to products_path }
+      format.js
+    end
   end
 
   def downvote
     @product.unliked_by(current_user)
-    redirect_to products_path
+    respond_to do |format|
+      format.html { redirect_to products_path }
+      format.js
+    end
   end
 
   private

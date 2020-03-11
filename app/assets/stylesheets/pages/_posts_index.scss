@@ -27,6 +27,7 @@ h1, h3, h2, h4 {
 .newsfeed-menu-products {
   height: 114px;
   background-image: image-url('apple.svg');
+  box-shadow: inset 0 0 0 100vw rgba(0,0,0,0.1);
   background-size: cover;
   border-radius: 20px;
   display: flex;

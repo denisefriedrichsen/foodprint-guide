@@ -4,14 +4,9 @@
   <% else %>
     <% if post.post_type == "update" %>
       <%= image_tag post.photo, class:"card-post-img" %>
-    <% else post.post_type == "event" %>
-      <% @markers = { lat: post.latitude, lng: post.longitude, image_url: image_url('marker.svg')}%>
-        <div
-          id="map"
-          class="card-post-map"
-          data-markers="[<%= @markers.to_json %>]"
-          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-        ></div>
+    <% elsif post.post_type == "event" %>
+      <% @token = ENV['MAPBOX_API_KEY']; %>
+      <%= image_tag image_url("https://api.mapbox.com/styles/v1/vronski13/ck7eq7c322ijr1imzopetdb00/static/pin-s+627655(#{post.longitude},#{post.latitude})/#{post.longitude},#{post.latitude},10/345x160?access_token=#{@token}"), class:"card-post-img"%>
     <% end %>
     <div class="card-post-body">
       <p><%= post.created_at.to_date.strftime('%d-%m-%Y') %></p>
