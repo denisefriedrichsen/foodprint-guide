@@ -1,5 +1,5 @@
 <div class="product-show container-fluid">
-  <h3 class="title"><%= @product.name %></h3>
+  <h2 class="title"><%= @product.name %></h2>
   <%= render 'shared/banner-show-product' %>
 
   <div class="padding">
@@ -13,9 +13,9 @@
 
     <div>
       <ul>
-        <li><i class="fas fa-info-circle info"></i>Fact 1: <%= @product.fact1 %></li>
-        <li><i class="fas fa-info-circle info"></i>Fact 2: <%= @product.fact2 %></li>
-        <li><i class="fas fa-info-circle info"></i>Fact 3: <%= @product.fact3 %></li>
+        <li><i class="fas fa-info-circle info"></i><%= @product.fact1.capitalize %></li>
+        <li><i class="fas fa-info-circle info"></i><%= @product.fact2.capitalize %></li>
+        <li><i class="fas fa-info-circle info"></i><%= @product.fact3.capitalize %></li>
       </ul>
     </div>
   </div>

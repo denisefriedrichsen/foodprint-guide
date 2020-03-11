@@ -1,12 +1,12 @@
 <div class="container-fluid">
-  <h3 class="title">Seasonal products</h3>
+  <h2 class="title">Seasonal products</h2>
   <br>
     <%= render 'shared/banner-featured', collection: @new_season_product, as: :new_season_product %>
     <div class="products-index-current-month">
       <h4 class ="current_month">This is what <strong> <%= Date::MONTHNAMES[Date.today.month] %> </strong> brings in
         <strong>
 
-          <% if params[:search].nil?%>
+          <% if params[:search].nil? | params[:search] = "" %>
             Berlin
           <% else %>
             <%= params[:search][:query].split(",")[0].capitalize %>

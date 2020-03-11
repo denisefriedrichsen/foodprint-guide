@@ -7,6 +7,7 @@
       <%= render partial: 'shared/post-card', collection: @all_posts, as: :post %>
     </div>
   <% else %>
+    <h2 class="title"><%= @producer.company_name %></h2>
     <%= render 'shared/banner-show-producer' %>
     <div class="padding">
       <div class="product-season">
