@@ -3,17 +3,19 @@
   <br>
     <%= render 'shared/banner-featured', collection: @new_season_product, as: :new_season_product %>
     <div class="products-index-current-month">
-      <h4 class ="current_month">This is what <strong> <%= Date::MONTHNAMES[Date.today.month] %> </strong> brings in
-        <strong>
 
-          <% if params[:search].nil? | params[:search] = "" %>
-            Berlin
+      <h4 class ="current_month">
+        This is what <strong><%= Date::MONTHNAMES[Date.today.month]%></strong> brings in
+        <strong>
+          <% if params[:search].nil? || params[:search][:query] == "" %>
+            <%= current_user.address.split(",")[1] %>
           <% else %>
             <%= params[:search][:query].split(",")[0].capitalize %>
           <% end %>
-        </strong> on your plate</h4>
-        <br>
-      </div>
+        </strong> on your plate
+      </h4>
+      <br>
+    </div>
 
     <div class="product-producer">
       <div class="mytab-div">
@@ -88,7 +90,7 @@
         <% else %>
           <div class="container">
             <div class="row">
-              <%= render partial: 'shared/product-card', collection: @vegetables, as: :product, locals: { to_delete: false } %>
+              <%= render partial: 'shared/product-card', collection: @vegetables_season, as: :product, locals: { to_delete: false } %>
             </div>
           </div>
         <% end %>
@@ -99,7 +101,7 @@
         <% else %>
           <div class="container">
             <div class="row">
-              <%= render partial: 'shared/product-card', collection: @cereals, as: :product, locals: { to_delete: false } %>
+              <%= render partial: 'shared/product-card', collection: @cereals_season, as: :product, locals: { to_delete: false } %>
             </div>
           </div>
         <% end %>
@@ -110,7 +112,7 @@
         <% else %>
           <div class="container">
             <div class="row">
-              <%= render partial: 'shared/product-card', collection: @dairy, as: :product, locals: { to_delete: false } %>
+              <%= render partial: 'shared/product-card', collection: @dairy_season, as: :product, locals: { to_delete: false } %>
             </div>
           </div>
         <% end %>
@@ -121,7 +123,7 @@
         <% else %>
           <div class="container">
             <div class="row">
-              <%= render partial: 'shared/product-card', collection: @meat, as: :product, locals: { to_delete: false } %>
+              <%= render partial: 'shared/product-card', collection: @meat_season, as: :product, locals: { to_delete: false } %>
             </div>
           </div>
         <% end %>
