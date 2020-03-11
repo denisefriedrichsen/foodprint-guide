@@ -1,4 +1,5 @@
 <div class="container-fluid">
+<<<<<<< HEAD
 
     <br>
     <h2 class="title">Favourite products</h2>
@@ -56,45 +57,14 @@
             </div>
           </div>
         <% end %>
+=======
+  <br>
+  <h3 class="title">Favourite products</h3>
+    <div class="container">
+      <div class="row">
+        <%= render partial: 'shared/product-card', collection: @products, as: :product, locals: { to_delete: true } %>
+>>>>>>> a2962388f9769c544b27f245114dddb97d1b8c90
       </div>
     </div>
-  <% end %>
-
-
-    <div id="season">
-      <br>
-      <h3>Not in season</h3>
-    </div>
-
-    <% unless @products_not_in_season == [] %>
-      <div class="container">
-        <div class="row">
-          <% @products_not_in_season.each do |product| %>
-            <div class="col-6 mt-3 px-2">
-              <div class="card-product">
-                <i class="fas fa-heart heart-full card-product-heart"></i>
-                <%= link_to product_path(product, search: params[:search].present? ? params[:search][:query] : "") do %>
-                  <%= image_tag product.photo, class:"card-product-img" %>
-                  <div class="card-product-body">
-                    <% if product.name.length > 10 %>
-                      <h3><%= product.name[0..9]%>..</h3>
-                    <% else %>
-                      <h3><%= product.name%></h3>
-                    <% end %>
-                    <% if product.season_start? && product.season_end? %>
-                      <p><%= product.season_start_month %> - <%= product.season_end_month %></p>
-                    <% end %>
-                    <div class="card-product-not-available"></div>
-                    <div class="card-product-not-available-label">Not in season</div>
-                  </div>
-                <% end %>
-              </div>
-            </div>
-          <% end %>
-        </div>
-      </div>
-  <% end %>
-
-<% end %>
 </div>
 
