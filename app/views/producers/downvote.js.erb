@@ -1,0 +1,18 @@
+function likeAction() {
+  const card = document.querySelector(".like-button[data-producer-id='<%= @producer.id %>']");
+  const targetId = <%= @producer.id %>;
+  const targetUpProducer = document.getElementById(`producer-up-${targetId}`);
+  const targetDownProducer = document.getElementById(`producer-down-${targetId}`);
+  targetUpProducer.classList.toggle("-hide-heart")
+  targetDownProducer.classList.toggle("-hide-heart")
+  console.log(card.dataset)
+  let producercard = document.querySelector(".card-producer");
+  const cardRmv = document.querySelector(`#cardproducer-${targetId}`)
+  if (card.dataset.toDelete === "true") {
+  cardRmv.parentElement.remove();
+}
+}
+
+
+likeAction();
+
