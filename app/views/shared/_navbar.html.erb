@@ -1,16 +1,9 @@
 <div class="navbar navbar-expand-lg navbar-light navbar-lewagon sticky-top">
   <%= link_to root_path, class: "navbar-brand" do %>
-    <%= image_tag "logo-foodprint.png" %>
+    <%= image_tag "logo_foodprint.svg" %>
   <% end %>
-  <% if @title %>
-    <% if @title.length > 12 %>
-      <h3><%= @title[0..11]%>..</h3>
-    <% else %>
-      <h3><%= @title%></h3>
-    <% end %>
-  <% else %>
-    <h1>FOOD<span>PRINT</h1></span>
-   <% end %>
+
+  <h1>FOOD<span>PRINT</h1></span>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
   <span class="navbar-toggler-icon"></span>
