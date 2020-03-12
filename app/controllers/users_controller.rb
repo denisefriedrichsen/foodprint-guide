@@ -7,6 +7,17 @@ class UsersController < ApplicationController
     @products = @votes.filter { |item| item.class.to_s == "Product"}
     @products_in_season = []
     @products_not_in_season = []
+
+    @products.each do |product|
+      if product.season_start > product.season_end && product.season_end >= Date.today.strftime("%m").to_i
+        @products_in_season << product
+      elsif product.season_start <= Date.today.strftime("%m").to_i && product.season_end >= Date.today.strftime("%m").to_i
+        @products_in_season << product
+      else
+        @products_not_in_season << product
+      end
+    end
+
   end
 
   def index_producer
