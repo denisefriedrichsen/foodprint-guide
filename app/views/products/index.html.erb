@@ -7,8 +7,8 @@
       <h4 class ="current_month">
         This is what <strong><%= Date::MONTHNAMES[Date.today.month]%></strong> brings in
         <strong>
-          <% if params[:search].nil? || params[:search][:query] == "" %>
-            <%= current_user.address.split(",")[1] %>
+          <% if params[:search].blank? || params[:search][:query].blank? %>
+            Berlin
           <% else %>
             <%= params[:search][:query].split(",")[0].capitalize %>
           <% end %>
@@ -75,7 +75,7 @@
       <div class="tab-content" id="myTabContent">
       <div class="tab-pane fade show active" id="fruits" role="tabpanel" aria-labelledby="list-tab">
         <% if @fruit_count == 0 %>
-          <div class="alert-warning" role="alert">Sorry, currently there are no fruit in season.</div>
+          <div class="alert-warning" role="alert">Sorry, currently there are no fruits in season.</div>
         <% else %>
           <div class="container">
             <div class="row">

@@ -22,7 +22,14 @@
 
       <div>
         <ul>
-          <li><i class="fas fa-info-circle info"></i>Distance: 12km</li>
+          <% if params[:search].present? %>
+            <li><i class="fas fa-info-circle info"></i>Distance: <%=@producer.distance_to(params[:search][:query]).to_i%>km</li>
+          <% else %>
+            <li><i class="fas fa-info-circle info"></i>Distance: <%=@producer.distance_to(current_user).to_i%>km</li>
+          <% end %>
+
+
+
           <li><i class="fas fa-info-circle info"></i>Region: <%= @producer.region %></li>
           <li><i class="fas fa-info-circle info"></i>Website: <%= @producer.website %></li>
         </ul>

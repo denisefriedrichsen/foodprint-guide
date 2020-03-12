@@ -71,7 +71,7 @@ class ProductsController < ApplicationController
 
   def show
     if params[:search].present?
-      @producers = Producer.joins(:offerings).where(offerings: { product_id: @product.id }).near(params[:search], 200)
+      @producers = Producer.joins(:offerings).where(offerings: { product_id: @product.id }).near(params[:search][:query], 200)
     else
       @producers = Producer.joins(:offerings).where(offerings: { product_id: @product.id }).near(current_user, 200)
     end
@@ -88,7 +88,7 @@ class ProductsController < ApplicationController
     end
 
     if params[:search].present?
-      @results = Geocoder.search(params[:search])
+      @results = Geocoder.search(params[:search][:query])
       @markers <<
         {
           lat: @results.first.coordinates[0],
