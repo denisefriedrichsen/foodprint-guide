@@ -6,7 +6,7 @@
 
 <%= link_to producer_path(producer, search: { query: params[:search].present? ? params[:search][:query] : "" }) do %>
       <% if producer.company_name.length > 10 %>
-        <h3><%= producer.company_name[0..9]%>..</h3>
+        <h3><%= producer.company_name[0..12]%>..</h3>
       <% else %>
         <h3><%= producer.company_name%></h3>
       <% end %>
