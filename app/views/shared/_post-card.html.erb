@@ -9,7 +9,7 @@
       <%= image_tag image_url("https://api.mapbox.com/styles/v1/vronski13/ck7eq7c322ijr1imzopetdb00/static/pin-s+627655(#{post.longitude},#{post.latitude})/#{post.longitude},#{post.latitude},10/345x160?access_token=#{@token}"), class:"card-post-img"%>
     <% end %>
     <div class="card-post-body">
-      <p><%= post.created_at.to_date.strftime('%d.%m.%Y') %></p>
+      <p><%= post.created_at.to_date.strftime('%dth %B %Y') %></p>
       <h3><%= post.title %></h3>
       <p><%= post.content %></p>
     </div>
