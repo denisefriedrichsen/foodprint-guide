@@ -1,18 +1,19 @@
-<div class="navbar navbar-expand-lg navbar-light navbar-lewagon sticky-top">
-  <%= link_to root_path, class: "navbar-brand" do %>
-    <%= image_tag "logo_foodprint.svg" %>
-  <% end %>
+<div class="navbar navbar-expand-lg navbar-light navbar-lewagon sticky-top px-3">
+    <%= link_to root_path, class: "navbar-brand" do %>
+      <%= image_tag "logo_foodprint.svg" %>
+    <% end %>
+
 
   <h1>FOOD<span>PRINT</h1></span>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-  <span class="navbar-toggler-icon"></span>
+  <span><%= image_tag "hamburger.svg" %></span>
   </button>
 
   <div class="collapse navbar-collapse" id="navbarCollapse">
     <ul class="navbar-nav mr-auto">
       <button class="navbar-toggler" id="burger" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="true" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+        <span> <%= image_tag "hamburger.svg" %> </span>
       </button>
     <% if user_signed_in? %>
         <li class="nav-item active">
