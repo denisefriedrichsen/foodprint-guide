@@ -25,3 +25,11 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
+
+  <%= f.input :password,
+                    placeholder: "leave it blank if you don't want to change it",
+                    required: false,
+                    input_html: { autocomplete: "new-password" } %>
+        <%= f.input :password_confirmation,
+                    required: false,
+                    input_html: { autocomplete: "new-password" } %>
