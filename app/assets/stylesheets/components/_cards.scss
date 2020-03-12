@@ -6,6 +6,9 @@
 }
 
 .card-product-not-available {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: absolute;
   top: 0px;
   left: 0px;
@@ -17,18 +20,17 @@
 
 .card-product-not-available-label {
   background-color: white;
-  position: absolute;
-  margin-right: 9px;
-  top: 10px;
-  left: 9px;
+  margin-bottom: 5px;
   border-radius: 20px;
   color: $gold;
   text-align: center;
-  font-size: 20px;
-  vertical-align: middle;
+  font-size: 15px;
+  vertical-align: center;
   line-height: initial;
-  padding: 15px 12px;
+  padding: 5px 10px;
+  width: 130px;
 }
+
 
 .card-product-img {
   height: 160px;
