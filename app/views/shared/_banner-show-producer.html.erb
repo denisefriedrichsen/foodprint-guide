@@ -1,17 +1,5 @@
 <div class="banner-show">
-    <% if current_user.voted_for? @producer  %>
-      <%= link_to producer_downvote_path(@producer), method: :patch, class: "button is-link" do %>
-        <span class="icon">
-          <i class="fas fa-heart heart-full card-product-heart"></i>
-        </span>
-      <% end %>
-    <% else %>
-      <%= link_to producer_upvote_path(@producer), method: :patch, class: "button is-link" do %>
-        <span class="icon">
-          <i class="far fa-heart heart-empty card-product-heart"></i>
-        </span>
-      <% end %>
-    <% end %>
+    <%= render 'shared/producer-card_favourite_icon', producer: @producer, to_delete: false %>
   <%= image_tag @producer.photo, class:"banner-show-img" %>
 </div>
 
