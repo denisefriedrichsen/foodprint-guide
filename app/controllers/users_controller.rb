@@ -11,8 +11,8 @@ class UsersController < ApplicationController
 
   def index_producer
     @votes = @user.find_liked_items
-    @producers = @votes.filter { |item| item.class.to_s == "Producer"}
-    @producers.sort_by { |producer| producer.distance_to(@user).to_i }
+    @producers_unsorted = @votes.filter { |item| item.class.to_s == "Producer"}
+    @producers = @producers_unsorted.sort { |a, b| a.distance_to(@user).to_i <=> b.distance_to(@user).to_i }
 
     @markers = @producers.map do |producer|
       {
