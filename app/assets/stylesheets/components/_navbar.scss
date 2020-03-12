@@ -23,15 +23,20 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 45px;
-  margin-left: -10px;
+  width: 32px;
+  margin-bottom: 3px;
+}
+
+.navbar-brand {
+  margin-right: 0;
 }
 
 .navbar-toggler {
   border: none;
   color: $gold !important;
   width: 30px;
-  margin-right: 5px;
+  margin-right: 10px;
+  margin-bottom: 2px;
 }
 
 .dropdown-toggle::after {
