@@ -43,6 +43,7 @@ class ProductsController < ApplicationController
     end
     @cereals_count = @cereals_season.count
 
+
     # DAIRY
     @dairy = Product.where('category = ?', 'dairy')
     @dairy_season = []
