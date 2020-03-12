@@ -4,7 +4,7 @@
     <% @producers = Producer.joins(:offerings).where(offerings: { product_id: product.id }).near(params[:search][:query], 200) %>
     <% if @producers.empty? %>
         <div id="card-<%= product.id %>" class="card-product">
-          <i class="fas fa-heart heart-full card-product-heart"></i>
+            <%= render 'shared/product-card_favourite_icon', product: product, to_delete: to_delete %>
           <%= link_to product_path(product, search: { query: params[:search].present? ? params[:search][:query] : "" }) do %>
           <%= image_tag product.photo, class:"card-product-img" %>
           <div class="card-product-body">
