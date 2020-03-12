@@ -29,7 +29,7 @@
         <p><%=producer.region%></p>
       </div>
       <div class="card-producer-distance">
-        <% if params[:search].present? %>
+        <% if params[:search].present? && params[:search][:query].blank? == false %>
           <p><%=producer.distance_to(params[:search][:query]).to_i%>km</p>
         <% else %>
           <p><%=producer.distance_to(current_user).to_i%>km</p>

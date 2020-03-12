@@ -1,6 +1,6 @@
 <div class="col-6 mt-3 px-2">
 
-  <% if params[:search].present? %>
+  <% if params[:search].present? && params[:search][:query].blank? == false %>
     <% @producers = Producer.joins(:offerings).where(offerings: { product_id: product.id }).near(params[:search][:query], 200) %>
     <% if @producers.empty? %>
         <div id="card-<%= product.id %>" class="card-product">
