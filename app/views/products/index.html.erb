@@ -76,7 +76,7 @@
       </div>
       <div class="tab-content" id="myTabContent">
       <div class="tab-pane fade show active" id="fruits" role="tabpanel" aria-labelledby="list-tab">
-        <% if @fruit_count == 0 %>
+        <% if @fruits_season.empty? %>
           <div class="alert-warning" role="alert">Sorry, currently there are no fruits in season.</div>
         <% else %>
           <div class="container">
@@ -87,7 +87,7 @@
         <% end %>
       </div>
       <div class="tab-pane fade" id="vegetables" role="tabpanel" aria-labelledby="maps-tab">
-        <% if @vegetable_count == 0 %>
+        <% if @vegetables_season.empty? == 0 %>
           <div class="alert-warning" role="alert">Sorry, currently there are no vegetables in season.</div>
         <% else %>
           <div class="container">
@@ -98,7 +98,7 @@
         <% end %>
       </div>
       <div class="tab-pane fade" id="cereals" role="tabpanel" aria-labelledby="maps-tab">
-        <% if @cereal_count == 0 %>
+        <% if @cereals_season.empty? %>
           <div class="alert-warning" role="alert">Sorry, currently there are no cereal products in season.</div>
         <% else %>
           <div class="container">
@@ -109,7 +109,7 @@
         <% end %>
       </div>
       <div class="tab-pane fade" id="dairy" role="tabpanel" aria-labelledby="maps-tab">
-        <% if @dairy_count == 0 %>
+        <% if @dairy_season.empty? %>
           <div class="alert-warning" role="alert">Sorry, currently there are no dairy products in season.</div>
         <% else %>
           <div class="container">
@@ -120,7 +120,7 @@
         <% end %>
       </div>
       <div class="tab-pane fade" id="meat" role="tabpanel" aria-labelledby="maps-tab">
-        <% if @meat_count == 0 %>
+        <% if @meat_season.empty? %>
           <div class="alert-warning" role="alert">Sorry, currently there are no meat products in season.</div>
         <% else %>
           <div class="container">
