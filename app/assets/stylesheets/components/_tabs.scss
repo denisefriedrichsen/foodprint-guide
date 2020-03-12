@@ -9,13 +9,15 @@
 
 .nav-tabs .nav-link {
   border: none;
-  border-bottom: 1px solid $gold;
+  margin-bottom: 1px;
+  border-bottom: 1px solid transparent;
 }
 
 .nav-tabs .nav-link.active {
   border: none;
   background-color: $silver;
-  border-bottom: 1px solid $gold;
+  margin-bottom: 1px;
+  border-bottom: 1px solid transparent;
 }
 
 .category-icon {

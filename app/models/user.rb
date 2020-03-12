@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   validates :address, presence: true
   validates :email, presence: true, uniqueness: true
+  validates :username, presence: true
   has_many :favourite_producers
   has_many :favourite_products
   geocoded_by :address

@@ -7,6 +7,8 @@
     </div>
   <% else %>
 
+    <h2 class="title"><%= @producer.company_name %></h2>
+
     <%= render 'shared/banner-show-producer', locals: { to_delete: true } %>
 
     <div class="padding">
@@ -20,7 +22,14 @@
 
       <div>
         <ul>
-          <li><i class="fas fa-info-circle info"></i>Distance: 12km</li>
+          <% if params[:search].present? && params[:search][:query].blank? == false %>
+            <li><i class="fas fa-info-circle info"></i>Distance: <%=@producer.distance_to(params[:search][:query]).to_i%>km</li>
+          <% else %>
+            <li><i class="fas fa-info-circle info"></i>Distance: <%=@producer.distance_to(current_user).to_i%>km</li>
+          <% end %>
+
+
+
           <li><i class="fas fa-info-circle info"></i>Region: <%= @producer.region %></li>
           <li><i class="fas fa-info-circle info"></i>Website: <%= @producer.website %></li>
         </ul>

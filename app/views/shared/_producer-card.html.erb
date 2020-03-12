@@ -4,7 +4,7 @@
     <%= image_tag producer.photo, class:"card-producer-img" %>
     <div class="card-producer-body">
 
-<%= link_to producer_path(producer) do %>
+<%= link_to producer_path(producer, search: { query: params[:search].present? ? params[:search][:query] : "" }) do %>
       <% if producer.company_name.length > 10 %>
         <h3><%= producer.company_name[0..9]%>..</h3>
       <% else %>
@@ -20,8 +20,8 @@
         <p><%=producer.region%></p>
       </div>
       <div class="card-producer-distance">
-        <% if params[:search].present? %>
-          <p><%=producer.distance_to(params[:search]).to_i%>km</p>
+        <% if params[:search].present? && params[:search][:query].blank? == false %>
+          <p><%=producer.distance_to(params[:search][:query]).to_i%>km</p>
         <% else %>
           <p><%=producer.distance_to(current_user).to_i%>km</p>
         <% end %>
