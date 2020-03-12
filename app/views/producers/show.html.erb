@@ -39,7 +39,7 @@
 
     <% unless @post.nil? %>
       <div class=“producer-show”>
-        <h2 class="updates">Latest Updates</h2>
+        <h2 class="title">Latest Updates</h2>
         <%= render partial: 'shared/post-card', object: @post, as: :post%>
         <div class="producer-show-button">
           <%= link_to "Show all posts", producer_path(@producer, from_linkto: true) , class: "btn-gold"%>
@@ -47,9 +47,8 @@
       </div>
     <% end %>
 
-    <div class="producer-show">
-      <br>
-      <h2>Product Overview</h2>
+    <div>
+      <h2 class="title">Product Overview</h2>
     </div>
 
 

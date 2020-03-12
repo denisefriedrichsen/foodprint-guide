@@ -5,12 +5,11 @@ function likeAction() {
   const targetDownProducer = document.getElementById(`producer-down-${targetId}`);
   targetUpProducer.classList.toggle("-hide-heart")
   targetDownProducer.classList.toggle("-hide-heart")
-  console.log(card.dataset)
   let producercard = document.querySelector(".card-producer");
-  const cardRmv = document.querySelector(`#cardproducer-${targetId}`)
+  const cardRmv = document.querySelector('.card-producer[data-producer-id="<%= @producer.id %>"]')
   if (card.dataset.toDelete === "true") {
-  cardRmv.parentElement.remove();
-}
+    cardRmv.remove();
+  }
 }
 
 
