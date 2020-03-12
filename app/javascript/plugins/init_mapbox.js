@@ -39,6 +39,10 @@ const initMapbox = () => {
     const markers = JSON.parse(mapElement.dataset.markers);
     addMarkersToMap(map, markers);
     fitMapToMarkers(map, markers);
+    const tabButton = document.getElementById("list-tab");
+    if (tabButton) {
+      tabButton.click();
+    }
   }
 };
 

@@ -16,19 +16,19 @@
           <div class="account">Edit your account</div>
         <% end %>
         <%= link_to favourite_products_path do %>
-          <div class="favourite-products">Your favourite products</div>
+          <div class="favourite-products">Favourite products</div>
         <% end %>
       </div>
     </div>
     <%= link_to favourite_producers_path do %>
       <div class="newsfeed-menu-right">
-        <p>Your favourite producers</p>
+        <p>Favourite producers</p>
         <%= image_tag "producer_marker.svg", id: "producer_marker", alt: "Marker of a producer" %>
         <%= image_tag "producer_icon.svg", id: "producer_icon", alt: "Icon of a producer" %>
       </div>
     <% end %>
   </div>
-
+<br>
   <h2 class="title">Updates</h2>
     <% if @posts == [] %>
       <div>

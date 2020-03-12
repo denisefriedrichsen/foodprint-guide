@@ -13,9 +13,9 @@
 
     <div>
       <ul>
-        <li><i class="fas fa-info-circle info"></i><%= @product.fact1.capitalize %></li>
-        <li><i class="fas fa-info-circle info"></i><%= @product.fact2.capitalize %></li>
-        <li><i class="fas fa-info-circle info"></i><%= @product.fact3.capitalize %></li>
+        <li><i class="fas fa-seedling info"></i><%= @product.fact1.capitalize %></li>
+        <li><i class="fas fa-seedling info"></i><%= @product.fact2.capitalize %></li>
+        <li><i class="fas fa-seedling info"></i><%= @product.fact3.capitalize %></li>
       </ul>
     </div>
   </div>
@@ -39,13 +39,13 @@
       </div>
 
       <div class="tab-content" id="myTabContent">
-        <div class="tab-pane fade show active" id="list" role="tabpanel" aria-labelledby="list-tab">
+        <div class="tab-pane fade " id="list" role="tabpanel" aria-labelledby="list-tab">
           <%= render partial: 'shared/producer-card', collection: @producers, as: :producer, locals: { to_delete: false }%>
         </div>
-        <div class="tab-pane fade" id="maps" role="tabpanel" aria-labelledby="maps-tab">
+        <div class="tab-pane fade show active" id="maps" role="tabpanel" aria-labelledby="maps-tab">
           <div
             id="map"
-            style="max-width: 345px;
+            style="
             height: 400px; overflow: hidden"
             data-markers="<%= @markers.to_json %>"
             data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
