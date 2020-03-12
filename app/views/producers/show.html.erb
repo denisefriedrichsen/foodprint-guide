@@ -22,7 +22,7 @@
 
       <div>
         <ul>
-          <% if params[:search].present? %>
+          <% if params[:search].present? && params[:search][:query].blank? == false %>
             <li><i class="fas fa-info-circle info"></i>Distance: <%=@producer.distance_to(params[:search][:query]).to_i%>km</li>
           <% else %>
             <li><i class="fas fa-info-circle info"></i>Distance: <%=@producer.distance_to(current_user).to_i%>km</li>
