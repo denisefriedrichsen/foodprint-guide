@@ -18,6 +18,10 @@
   box-shadow: inset 0 0 0 100vw rgba(250,250,250,0.5);
 }
 
+.favourite-icon, .favourite-icon * {
+  z-index: 5;
+}
+
 .card-product-not-available-label {
   background-color: white;
   margin-bottom: 5px;

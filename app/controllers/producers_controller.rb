@@ -21,7 +21,6 @@ class ProducersController < ApplicationController
       end
     end
 
-
   end
 
     def upvote

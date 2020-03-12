@@ -51,10 +51,16 @@
       <h2 class="title">Product Overview</h2>
     </div>
 
-
-    <div class="row padding">
-      <%= render partial: 'shared/product-card', collection: @products, as: :product, locals: { to_delete: false } %>
-    </div>
+    <% if @products == [] %>
+      <div>
+        <div class="alert-warning" role="alert">The producer has no product offers right now.</div>
+      </div>
+    <% else %>
+      <div class="row padding">
+        <%= render partial: 'shared/product-card-in-season', collection: @products_in_season, as: :product, locals: { to_delete: false } %>
+        <%= render partial: 'shared/product-card-not-in-season', collection: @products_not_in_season, as: :product, locals: { to_delete: false } %>
+      </div>
+    <% end %>
 
   <% end %>
 </div>

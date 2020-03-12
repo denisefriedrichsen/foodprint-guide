@@ -1,4 +1,4 @@
-<div>
+<div class="favourite-icon">
 <%= link_to producer_downvote_path(producer), method: :patch, class: "like-button #{'-hide-heart' if !current_user.voted_for? producer} button is-link", :data => { :'producer-id' => producer.id, "to-delete" => to_delete }, id: "producer-down-#{ producer.id}", remote: true  do %>
   <span class="icon">
     <i class="fas fa-heart heart-full card-product-heart"></i>
