@@ -18,12 +18,26 @@ h1, h3, h2, h4 {
 
 .newsfeed-menu {
   display: flex;
+  width: 100%;
 }
 
 .newsfeed-menu-left {
-  width: 228px;
+  width: 70%;
   margin-right: 8px;
 }
+
+.newsfeed-menu-right {
+  border-radius: 10px;
+  background-image: image-url('map_producers.svg');
+  background-size: cover;
+  color: $olive;
+  padding-top: 30px;
+  padding-left: 15px;
+  padding-right: 20px;
+  height: 230px;
+  position: relative;
+}
+
 
 .newsfeed-menu-products {
   height: 114px;
@@ -31,18 +45,19 @@ h1, h3, h2, h4 {
   box-shadow: inset 0 0 0 100vw rgba(0,0,0,0.1);
   background-size: cover;
   border-radius: 20px;
-  display: flex;
+  position: relative;
+
   #products_search {
-    position: relative;
+    position: absolute;
     right: 30px;
+    top: 30px;
   }
   p {
     color: white;
     padding-left: 15px;
     padding-right: 60px;
-    position: relative;
+    position: absolute;
     top: 30px;
-    vertical-align: middle !important;
   }
 }
 
@@ -56,46 +71,37 @@ h1, h3, h2, h4 {
   color: $olive;
   margin-top: 8px;
   }
-
-  .favourite-products {
-    padding-left: 15px;
-    padding-top: 15px;
-    text-align: left;
-
-  }
-  .account {
-    margin-right: 8px;
-    padding-left: 15px;
-    padding-top: 15px;
-    text-align: left;
-  }
 }
 
-.newsfeed-menu-right {
-  border-radius: 10px;
-  background-image: image-url('map_producers.svg');
-  background-size: cover;
-  color: $olive;
-  padding-top: 30px;
+.account {
+  width: 50%;
+  margin-right: 8px;
   padding-left: 15px;
-  padding-right: 20px;
-  width: 109px;
-  height: 230px;
-  display: flex;
-  #producer_marker {
-    position: relative;
-    width: 14.5px;
-    top: 80px;
-    left: -37px;
-    height: 24px;
-  }
-  #producer_icon {
-    position: relative;
-    width: 40px;
-    height: 49px;
-    top: 115px;
-    left: -65px;
-  }
+  padding-top: 15px;
+}
+
+
+.favourite-products {
+  width: 50%;
+  padding-left: 15px;
+  padding-top: 15px;
+}
+
+
+#producer_icon {
+  position: absolute;
+  width: 40px;
+  height: 49px;
+  top: 140px;
+  left: 28px;
+}
+
+#producer_marker {
+  position: absolute;
+  width: 14.5px;
+  top: 110px;
+  left: 40px;
+  height: 24px;
 }
 
 #updates, #posts, #header {
