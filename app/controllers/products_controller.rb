@@ -6,16 +6,67 @@ class ProductsController < ApplicationController
     @products = Product.where('season_start <= ?', Date.today.strftime("%m")).where('season_end >= ?', Date.today.strftime("%m"))
     @new_season_all_products = Product.where('season_start = ?', (Date.today.strftime("%m").to_i + 1))
     @new_season_product = @new_season_all_products.sample
-    @fruits = Product.where('category = ? AND season_start <= ? AND season_end >= ?', 'fruits', Date.today.strftime("%m").to_i, Date.today.strftime("%m").to_i)
-    @vegetables = Product.where('category = ? AND season_start <= ? AND season_end >= ?', 'vegetables', Date.today.strftime("%m").to_i, Date.today.strftime("%m").to_i)
-    @cereals = Product.where('category = ? AND season_start <= ? AND season_end >= ?', 'cereals', Date.today.strftime("%m").to_i, Date.today.strftime("%m").to_i)
-    @dairy = Product.where('category = ? AND season_start <= ? AND season_end >= ?', 'dairy', Date.today.strftime("%m").to_i, Date.today.strftime("%m").to_i)
-    @meat = Product.where('category = ? AND season_start <= ? AND season_end >= ?', 'meat', Date.today.strftime("%m").to_i, Date.today.strftime("%m").to_i)
-    @fruit_count = @fruits.count
-    @vegetable_count = @vegetables.count
-    @cereal_count = @cereals.count
-    @dairy_count = @dairy.count
-    @meat_count = @meat.count
+
+    # FRUITS
+    @fruits = Product.where('category = ?', 'fruits')
+    @fruits_season = []
+    @fruits.each do |product|
+      if product.season_start > product.season_end && product.season_end >= Date.today.strftime("%m").to_i
+        @fruits_season << product
+      elsif product.season_start <= Date.today.strftime("%m").to_i && product.season_end >= Date.today.strftime("%m").to_i
+        @fruits_season << product
+      end
+    end
+    @fruit_count = @fruits_season.count
+
+    #VEGETABLES
+    @vegetables = Product.where('category = ?', 'vegetables')
+    @vegetables_season = []
+    @vegetables.each do |product|
+      if product.season_start > product.season_end && product.season_end >= Date.today.strftime("%m").to_i
+        @vegetables_season << product
+      elsif product.season_start <= Date.today.strftime("%m").to_i && product.season_end >= Date.today.strftime("%m").to_i
+        @vegetables_season << product
+      end
+    end
+    @vegetable_count = @vegetables_season.count
+
+    #CEREALS
+    @cereals = Product.where('category = ?', 'cereals')
+    @cereals_season = []
+    @cereals.each do |product|
+      if product.season_start > product.season_end && product.season_end >= Date.today.strftime("%m").to_i
+        @cereals_season << product
+      elsif product.season_start <= Date.today.strftime("%m").to_i && product.season_end >= Date.today.strftime("%m").to_i
+        @cereals_season << product
+      end
+    end
+    @cereals_count = @cereals_season.count
+
+    # DAIRY
+    @dairy = Product.where('category = ?', 'dairy')
+    @dairy_season = []
+    @dairy.each do |product|
+      if product.season_start > product.season_end && product.season_end >= Date.today.strftime("%m").to_i
+        @dairy_season << product
+      elsif product.season_start <= Date.today.strftime("%m").to_i && product.season_end >= Date.today.strftime("%m").to_i
+        @dairy_season << product
+      end
+    end
+    @dairy_count = @dairy_season.count
+
+    # MEAT
+    @meat = Product.where('category = ?', 'meat')
+    @meat_season = []
+    @meat.each do |product|
+      if product.season_start > product.season_end && product.season_end >= Date.today.strftime("%m").to_i
+        @meat_season << product
+      elsif product.season_start <= Date.today.strftime("%m").to_i && product.season_end >= Date.today.strftime("%m").to_i
+        @meat_season << product
+      end
+    end
+    @meat_count = @meat_season.count
+
   end
 
   def show
