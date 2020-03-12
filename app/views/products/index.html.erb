@@ -4,6 +4,7 @@
     <div class="products-index-current-month">
 
       <h4 class ="current_month">
+        <br>
         This is what <strong><%= Date::MONTHNAMES[Date.today.month]%></strong> brings in
         <strong>
           <% if params[:search].blank? || params[:search][:query].blank? %>
