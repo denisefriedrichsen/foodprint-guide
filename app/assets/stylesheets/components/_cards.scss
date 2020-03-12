@@ -18,7 +18,6 @@
 .card-product-not-available-label {
   background-color: white;
   position: absolute;
-  height: 80px;
   margin-right: 9px;
   top: 10px;
   left: 9px;
@@ -126,7 +125,7 @@
   max-width: 100%;
   border-radius: 20px;
   position: relative;
-  margin: 10px 0px;
+  margin: 20px 0px;
 
   h3 {
     color: $olive;

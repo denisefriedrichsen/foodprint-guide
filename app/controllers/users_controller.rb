@@ -12,6 +12,7 @@ class UsersController < ApplicationController
   def index_producer
     @votes = @user.find_liked_items
     @producers = @votes.filter { |item| item.class.to_s == "Producer"}
+    @producers.sort_by { |producer| producer.distance_to(@user).to_i }
 
     @markers = @producers.map do |producer|
       {
@@ -20,7 +21,6 @@ class UsersController < ApplicationController
         infoWindow: render_to_string(partial: 'products/info_window', locals: { producer: producer }),
         image_url: helpers.asset_url('marker.svg')
       }
-
     end
   end
 
