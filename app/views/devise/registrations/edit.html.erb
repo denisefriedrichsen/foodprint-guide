@@ -1,5 +1,5 @@
 
-<div class="container-fluid-full-screen sign-in" style="background-position: center; background-size: cover; background-image:  url( <%= image_path("login_page_background.jpg") %> )">
+<div class="container-fluid-full-screen sign-in">
   <div class="w-100 content">
     <h1 class="text-center">Edit account</h1>
     <!-- <p class="text-center">to be a friend of delicious local food</p> -->
@@ -15,20 +15,18 @@
 
         <%= f.input :username %>
         <%= f.input :address %>
+        <%= f.input :password %>
         <%= f.input :current_password,
                     placeholde: "we need your current password to confirm your changes",
                     required: true,
                     input_html: { autocomplete: "current-password" } %>
       </div>
-   <div class="form-actions">
+  <p> <div class="form-actions">
         <%= f.button :submit, "Update", class: "btn-gold" %>
       </div>
-    <% end %>
-
-<p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-<p>Edit password? <%= link_to "Edit password",  edit_user_password_path(resource_name), method: :get %></p>
-
-<%= link_to "Back", :back %>
-
+  <% end %></p>
+  <p><a class="btn-gold" <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></a> </p>
+  <p><a class="btn-gold"<%= link_to "Back", :back %>></a></p>
+    </div>
   </div>
-</div>
+
