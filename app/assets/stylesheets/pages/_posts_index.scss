@@ -32,10 +32,11 @@ h1, h3, h2, h4 {
   background-size: cover;
   color: $olive;
   padding-top: 30px;
-  padding-left: 15px;
-  padding-right: 20px;
   height: 230px;
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 
@@ -55,7 +56,7 @@ h1, h3, h2, h4 {
   p {
     color: white;
     padding-left: 15px;
-    padding-right: 60px;
+    padding-right: 80px;
     position: absolute;
     top: 30px;
   }
@@ -89,19 +90,7 @@ h1, h3, h2, h4 {
 
 
 #producer_icon {
-  position: absolute;
-  width: 40px;
-  height: 49px;
-  top: 140px;
-  left: 28px;
-}
-
-#producer_marker {
-  position: absolute;
-  width: 14.5px;
-  top: 110px;
-  left: 40px;
-  height: 24px;
+  margin-top: 10px;
 }
 
 #updates, #posts, #header {
