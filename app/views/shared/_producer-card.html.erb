@@ -1,7 +1,9 @@
 
 <div data-producer-id="<%= producer.id %>" class="card-producer">
   <%= render 'shared/producer-card_favourite_icon', producer: producer, to_delete: to_delete %>
-    <%= image_tag producer.photo, class:"card-producer-img" %>
+    <%= link_to producer_path(producer, search: { query: params[:search].present? ? params[:search][:query] : "" }) do %>
+      <%= image_tag producer.photo, class:"card-producer-img" %>
+    <% end %>
     <div class="card-producer-body">
 
 <%= link_to producer_path(producer, search: { query: params[:search].present? ? params[:search][:query] : "" }) do %>
