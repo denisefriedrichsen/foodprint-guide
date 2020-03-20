@@ -46,6 +46,10 @@ h1, h3, h2, h4 {
   font-family: Merriweather;
 }
 
+p {
+  font-size: 18px
+}
+
 h1 {
   font-size: 30px;
 }
@@ -64,6 +68,9 @@ h2 {
   h2 {
     font-size:30px;
   }
+  p {
+    font-size:20px
+  }
 }
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
@@ -72,6 +79,9 @@ h2 {
     }
   h2 {
     font-size:35px;
+  }
+  p {
+    font-size:25px
   }
 }
 // Large devices (desktops, 992px and up)
@@ -82,6 +92,9 @@ h2 {
   h2 {
     font-size:45px;
   }
+  p {
+    font-size:25px
+  }
  }
 
 // Extra large devices (large desktops, 1200px and up)
@@ -91,5 +104,8 @@ h2 {
     }
   h2 {
     font-size:50px;
+  }
+  p {
+    font-size:25px
   }
  }

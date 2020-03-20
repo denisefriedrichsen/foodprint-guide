@@ -2,6 +2,11 @@
 
 #header {
   padding-top: 20px;
+  margin: 0px auto 20px auto;
+  max-width: 850px;
+  h1 {
+    font-size: 55px;
+  }
 }
 
 #updates {
@@ -10,12 +15,15 @@
 
 .newsfeed-menu {
   display: flex;
-  width: 100%;
+  max-width: 850px;
+  justify-content: space-between;
+  margin: auto;
 }
 
 .newsfeed-menu-left {
   width: 70%;
   margin-right: 8px;
+  flex-grow: 1;
 }
 
 .newsfeed-menu-right {
@@ -23,7 +31,7 @@
   background-size: cover;
   background-position: center;
   color: $olive;
-  padding-top: 30px;
+  padding: 30px 20px;
   height: 230px;
   display: flex;
   flex-direction: column;
@@ -59,6 +67,9 @@
 .newsfeed-menu-options {
   display: flex;
   justify-content: space-between;
+  a {
+    flex-grow: 2;
+  }
   div {
   background-color: #F2F2E7;
   height: 108px;
@@ -76,17 +87,13 @@
 }
 
 .account {
-  max-width: 130px;
   margin-right: 8px;
-  padding-left: 15px;
-  padding-top: 15px;
+  padding: 15px 30px 15px 15px;
 }
 
 
 .favourite-products {
-  max-width: 130px;
-  padding-left: 15px;
-  padding-top: 15px;
+  padding: 15px 30px 15px 15px;
 }
 
 
