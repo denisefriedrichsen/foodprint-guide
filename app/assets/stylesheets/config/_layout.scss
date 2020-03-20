@@ -1,10 +1,20 @@
+#main-content {
+  min-height: calc(100vh - 100px);
+  background-color: white;
+  margin: auto;
+}
+
+
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {
   #main-content {
     min-height: calc(100vh - 100px);
     background-color: white;
-    max-width: 500px;
+    max-width: 900px;
     margin: auto;
+    margin-top: 30px;
+    padding-top: 15px;
+    border-radius: 20px;
   }
 }
 // Medium devices (tablets, 768px and up)
@@ -12,8 +22,11 @@
   #main-content {
     min-height: calc(100vh - 100px);
     background-color: white;
-    max-width: 500px;
+    max-width: 900px;
     margin: auto;
+    margin-top: 30px;
+    padding-top: 15px;
+    border-radius: 20px;
   }
 }
 // Large devices (desktops, 992px and up)
