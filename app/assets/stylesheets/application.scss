@@ -38,8 +38,6 @@ ul {
 
 .title {
   text-align: center;
-  font-size: 23px;
-  padding: 20px;
   background-color: white;
 }
 
@@ -49,11 +47,11 @@ h1, h3, h2, h4 {
 }
 
 h1 {
-  font-size: 25px;
+  font-size: 30px;
 }
 
 h2 {
-  font-size: 18px;
+  font-size: 25px;
 }
 
 
@@ -61,10 +59,10 @@ h2 {
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {
   h1 {
-    font-size:30px;
+    font-size:35px;
   }
   h2 {
-    font-size:20px;
+    font-size:30px;
   }
 }
 // Medium devices (tablets, 768px and up)
@@ -73,7 +71,7 @@ h2 {
     font-size:40px;
     }
   h2 {
-    font-size:25px;
+    font-size:35px;
   }
 }
 // Large devices (desktops, 992px and up)
@@ -82,7 +80,7 @@ h2 {
     font-size:50px;
     }
   h2 {
-    font-size:35px;
+    font-size:45px;
   }
  }
 
@@ -92,6 +90,6 @@ h2 {
     font-size:55px;
     }
   h2 {
-    font-size:40px;
+    font-size:50px;
   }
  }

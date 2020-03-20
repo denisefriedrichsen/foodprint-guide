@@ -128,10 +128,11 @@
 
 // post-card
 .card-post {
-  max-width: 100%;
+  max-width: 400px;
   border-radius: 20px;
   position: relative;
-  margin: 20px 0px;
+  margin: 20px auto;
+
 
   h3 {
     color: $olive;

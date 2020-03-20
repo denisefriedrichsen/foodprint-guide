@@ -1,7 +1,7 @@
 <div class="post-index container-fluid">
   <div id="header">
     <h1>Hello <%= current_user.username %> !</h1>
-    <h4>How are you today?</h4>
+    <h2>How are you today?</h2>
   </div>
   <div class="newsfeed-menu">
     <div class="newsfeed-menu-left">
@@ -35,7 +35,7 @@
         <div class="alert-warning" role="alert">You have no favourite producers yet.</div>
       </div>
     <% else %>
-      <div>
+      <div class="newsfeed-container">
         <%= render partial: 'shared/post-card', collection: @posts, as: :post %>
       </div>
     <% end %>
