@@ -1,4 +1,3 @@
-Foodprint 
 Foodprint is a mobile optimized web application to help you to reduce your ecological footprint easily – without any sacrifices.
 
 url: foodprint.guide
