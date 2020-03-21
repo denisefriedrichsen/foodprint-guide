@@ -1,11 +1,11 @@
 <div class="container-fluid">
-  <h2 class="title">Seasonal products</h2>
+  <h1 class="title">Seasonal products</h1>
     <% unless @new_season_product == [] %>
       <%= render 'shared/banner-featured', collection: @new_season_product, as: :new_season_product %>
     <% end %>
     <div class="products-index-current-month">
 
-      <h4 class ="current_month">
+      <h2 class ="current_month">
         <br>
         This is what <strong><%= Date::MONTHNAMES[Date.today.month]%></strong> brings in
         <strong>
@@ -15,7 +15,7 @@
             <%= params[:search][:query].split(",")[0].capitalize %>
           <% end %>
         </strong> on your plate
-      </h4>
+      </h2>
       <br>
     </div>
 
