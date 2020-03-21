@@ -19,6 +19,8 @@
 }
 
 .banner-show {
+  max-width: 850px;
+  margin:auto;
   position: relative;
   margin-bottom: 20px;
 }
@@ -37,11 +39,11 @@
 }
 
 .banner-featured {
-  width: 100%;
+  max-width: 850px;
+  margin:auto;
   overflow: hidden;
   min-height: 10vh;
   position: relative;
-  margin-bottom: -10px;
   display: flex;
   justify-content: space-between;
   background-color: $silver;
