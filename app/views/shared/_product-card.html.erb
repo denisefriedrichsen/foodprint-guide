@@ -9,12 +9,12 @@
           <%= image_tag product.photo, class:"card-product-img" %>
           <div class="card-product-body">
               <% if product.name.length > 10 %>
-                <h3><%= product.name[0..9]%>..</h3>
+                <h4><%= product.name[0..9]%>..</h4>
               <% else %>
-                <h3><%= product.name%></h3>
+                <h4><%= product.name%></h4>
               <% end %>
             <% if product.season_start? && product.season_end? %>
-            <p><%= product.season_start_month %> - <%= product.season_end_month %></p>
+            <h5><%= product.season_start_month %> - <%= product.season_end_month %></h5>
             <% end %>
             <div class="card-product-not-available">
               <div class="card-product-not-available-label">Not available in your area</div>
@@ -31,12 +31,12 @@
           <%= image_tag product.photo, class:"card-product-img" %>
           <div class="card-product-body">
               <% if product.name.length > 10 %>
-                <h3><%= product.name[0..9]%>..</h3>
+                <h4><%= product.name[0..9]%>..</h4>
               <% else %>
-                <h3><%= product.name%></h3>
+                <h4><%= product.name%></h4>
               <% end %>
             <% if product.season_start? && product.season_end? %>
-            <p><%= product.season_start_month %> - <%= product.season_end_month %></p>
+            <h5><%= product.season_start_month %> - <%= product.season_end_month %></h5>
             <% end %>
           </div>
         <% end %>
@@ -53,12 +53,12 @@
           <%= image_tag product.photo, class:"card-product-img" %>
           <div class="card-product-body">
               <% if product.name.length > 10 %>
-                <h3><%= product.name[0..9]%>..</h3>
+                <h4><%= product.name[0..9]%>..</h4>
               <% else %>
-                <h3><%= product.name%></h3>
+                <h4><%= product.name%></h4>
               <% end %>
             <% if product.season_start? && product.season_end? %>
-            <p><%= product.season_start_month %> - <%= product.season_end_month %></p>
+            <h5><%= product.season_start_month %> - <%= product.season_end_month %></h5>
             <% end %>
             <div class="card-product-not-available">
               <div class="card-product-not-available-label">Not available in your area</div>
@@ -75,12 +75,12 @@
           <%= image_tag product.photo, class:"card-product-img" %>
           <div class="card-product-body">
               <% if product.name.length > 10 %>
-                <h3><%= product.name[0..9]%>..</h3>
+                <h4><%= product.name[0..9]%>..</h4>
               <% else %>
-                <h3><%= product.name%></h3>
+                <h4><%= product.name%></h4>
               <% end %>
             <% if product.season_start? && product.season_end? %>
-            <p><%= product.season_start_month %> - <%= product.season_end_month %></p>
+            <h5><%= product.season_start_month %> - <%= product.season_end_month %></h5>
             <% end %>
           </div>
         <% end %>
