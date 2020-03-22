@@ -3,7 +3,6 @@
 #header {
   padding-top: 20px;
   margin: 0px auto 20px auto;
-  max-width: 850px;
   h1 {
     font-size: 55px;
   }
@@ -15,9 +14,7 @@
 
 .newsfeed-menu {
   display: flex;
-  max-width: 850px;
   justify-content: space-between;
-  margin: auto;
 }
 
 .newsfeed-menu-left {
@@ -82,8 +79,6 @@
 .newsfeed-container {
   display: flex;
   flex-wrap: wrap;
-  max-width: 900px;
-  margin: auto;
 }
 
 .account {
