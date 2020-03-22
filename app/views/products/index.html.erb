@@ -79,10 +79,8 @@
         <% if @fruits_season.empty? %>
           <div class="alert-warning" role="alert">Sorry, currently there are no fruits in season.</div>
         <% else %>
-          <div class="container">
-            <div class="row">
-              <%= render partial: 'shared/product-card', collection: @fruits_season, as: :product, locals: { to_delete: false } %>
-            </div>
+          <div class="row mx-0">
+            <%= render partial: 'shared/product-card', collection: @fruits_season, as: :product, locals: { to_delete: false } %>
           </div>
         <% end %>
       </div>
@@ -90,10 +88,8 @@
         <% if @vegetables_season.empty? == 0 %>
           <div class="alert-warning" role="alert">Sorry, currently there are no vegetables in season.</div>
         <% else %>
-          <div class="container">
-            <div class="row">
-              <%= render partial: 'shared/product-card', collection: @vegetables_season, as: :product, locals: { to_delete: false } %>
-            </div>
+          <div class="row mx-0">
+            <%= render partial: 'shared/product-card', collection: @vegetables_season, as: :product, locals: { to_delete: false } %>
           </div>
         <% end %>
       </div>
@@ -101,10 +97,8 @@
         <% if @cereals_season.empty? %>
           <div class="alert-warning" role="alert">Sorry, currently there are no cereal products in season.</div>
         <% else %>
-          <div class="container">
-            <div class="row">
-              <%= render partial: 'shared/product-card', collection: @cereals_season, as: :product, locals: { to_delete: false } %>
-            </div>
+          <div class="row mx-0">
+            <%= render partial: 'shared/product-card', collection: @cereals_season, as: :product, locals: { to_delete: false } %>
           </div>
         <% end %>
       </div>
@@ -112,10 +106,8 @@
         <% if @dairy_season.empty? %>
           <div class="alert-warning" role="alert">Sorry, currently there are no dairy products in season.</div>
         <% else %>
-          <div class="container">
-            <div class="row">
-              <%= render partial: 'shared/product-card', collection: @dairy_season, as: :product, locals: { to_delete: false } %>
-            </div>
+          <div class="row mx-0">
+            <%= render partial: 'shared/product-card', collection: @dairy_season, as: :product, locals: { to_delete: false } %>
           </div>
         <% end %>
       </div>
@@ -123,10 +115,8 @@
         <% if @meat_season.empty? %>
           <div class="alert-warning" role="alert">Sorry, currently there are no meat products in season.</div>
         <% else %>
-          <div class="container">
-            <div class="row">
-              <%= render partial: 'shared/product-card', collection: @meat_season, as: :product, locals: { to_delete: false } %>
-            </div>
+          <div class="row mx-0">
+            <%= render partial: 'shared/product-card', collection: @meat_season, as: :product, locals: { to_delete: false } %>
           </div>
         <% end %>
       </div>
