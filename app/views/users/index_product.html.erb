@@ -14,12 +14,12 @@
       </ul>
       <div class="tab-content" id="myTabContent">
         <div class="tab-pane fade show active" id="list" role="tabpanel" aria-labelledby="list-tab">
-          <div class="row mx-0">
+          <div class="row mx-0 my-3">
             <%= render partial: 'shared/product-card-in-season', collection: @products_in_season, as: :product, locals: { to_delete: true } %>
           </div>
         </div>
         <div class="tab-pane fade" id="maps" role="tabpanel" aria-labelledby="maps-tab">
-          <div class="row mx-0">
+          <div class="row mx-0 my-3">
             <%= render partial: 'shared/product-card-not-in-season', collection: @products_not_in_season, as: :product, locals: { to_delete: true } %>
           </div>
         </div>
