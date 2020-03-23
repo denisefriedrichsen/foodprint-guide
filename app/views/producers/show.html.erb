@@ -2,7 +2,7 @@
   <div class="container-content">
     <% if params[:from_linkto].present? %>
       <div class=“producer-show” id="producer-show-all-posts">
-        <%= link_to "Back", producer_path(@producer) , class: "btn-gold"%>
+        <%= link_to "Back", producer_path(@producer) , class: "btn btn-gold"%>
         <h2 class="updates">All posts</h2>
         <%= render partial: 'shared/post-card', collection: @all_posts, as: :post %>
       </div>
@@ -42,8 +42,8 @@
         <div class=“producer-show”>
           <h2 class="title">Latest Updates</h2>
           <%= render partial: 'shared/post-card', object: @post, as: :post%>
-          <div class="producer-show-button">
-            <%= link_to "Show all posts", producer_path(@producer, from_linkto: true) , class: "btn-gold"%>
+          <div class="text-center">
+            <%= link_to "Show all posts", producer_path(@producer, from_linkto: true) , class: "btn btn-gold"%>
           </div>
         </div>
       <% end %>

@@ -23,12 +23,12 @@
       </div>
     <p>
     <div class="form-actions d-flex justify-content-center">
-      <%= f.button :submit, "Update", class: "btn-gold", style: "width: 100%" %>
+      <%= f.button :submit, "Update", class: "btn btn-gold", style: "width: 100%" %>
     </div>
     <% end %></p>
-    <div class="d-flex justify-content-between btntwo"  >
-      <p><a class="btn-gold"<%= link_to "Back", :back %> </a></p>
-      <p><a class="btn-gray" <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></a> </p>
+    <div class="d-flex justify-content-between mt-4"  >
+      <p><a class="btn btn-gold"<%= link_to "Back", :back %> </a></p>
+      <p><a class="btn btn-gold" <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></a> </p>
     </div>
   </div>
 </div>

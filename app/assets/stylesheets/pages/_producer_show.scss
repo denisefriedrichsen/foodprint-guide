@@ -12,11 +12,10 @@
     font-size: 20px;
     text-align: center;
   }
-}
-
-.producer-show-button {
-  display: flex;
-  justify-content: space-around;
+  .btn {
+    display: flex;
+    justify-content: space-around;
+  }
 }
 
 
@@ -29,7 +28,7 @@
 .producer-show-all-posts {
   display: flex;
   justify-content: space-around;
-  .btn-gold {
+  .btn {
     position: relative;
     top: 50px;
   }
