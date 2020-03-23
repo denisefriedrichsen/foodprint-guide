@@ -14,7 +14,7 @@
       <p><%= post.content %></p>
     </div>
       <%= link_to producer_path(post.producer_id) do %>
-        <%= cl_image_tag post.producer.photo, width: 90, height: 90, crop: :scale, class:"avatar-large card-post-avatar " %>
+        <%= cl_image_tag post.producer.photo, width: 90, height: 90, crop: :scale, class:"avatar card-post-avatar" %>
       <% end %>
   <% end %>
 </div>
