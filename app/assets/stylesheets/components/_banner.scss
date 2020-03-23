@@ -41,17 +41,15 @@
     margin: auto;
     line-height: 1.3em;
   }
-}
-
-.banner-featured-button {
-  position: absolute;
-  bottom: 10%;
-  left: 35%;
-}
-
-.banner-featured-img {
-  width: 60%;
-  border-radius: 0px 20px 20px 0px;
-  object-fit: cover;
-  flex-grow: 2;
+  img {
+    width: 60%;
+    border-radius: 0px 20px 20px 0px;
+    object-fit: cover;
+    flex-grow: 2;
+  }
+  .btn {
+    position: absolute;
+    bottom: 10%;
+    left: 35%;
+  }
 }
