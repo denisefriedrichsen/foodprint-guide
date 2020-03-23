@@ -1,8 +1,6 @@
-
-<div class="container-fluid-full-screen sign-in">
-  <div class="w-100 content">
-    <h1 class="text-center">Edit account</h1>
-    <!-- <p class="text-center">to be a friend of delicious local food</p> -->
+<div class="container-fluid form-background vh-100">
+  <div class="container-form w-100">
+    <h1 class="title">Edit account</h1>
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
       <%= f.error_notification %>
 
@@ -21,15 +19,13 @@
                     required: true,
                     input_html: { autocomplete: "current-password", class: "devise-form-field" } %>
       </div>
-    <p>
     <div class="form-actions d-flex justify-content-center">
-      <%= f.button :submit, "Update", class: "btn btn-gold", style: "width: 100%" %>
+      <%= f.button :submit, "Update", class: "btn btn-gold w-100 mb-2" %>
     </div>
-    <% end %></p>
-    <div class="d-flex justify-content-between mt-4"  >
-      <p><a class="btn btn-gold"<%= link_to "Back", :back %> </a></p>
-      <p><a class="btn btn-gold" <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></a> </p>
+    <% end %>
+    <div class="d-flex justify-content-between m-4">
+      <%= link_to "Back", :back , class:"btn btn-silver"%>
+      <%= link_to "Delete my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class:"btn btn-silver"%>
     </div>
   </div>
 </div>
-

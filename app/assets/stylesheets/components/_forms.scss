@@ -1,15 +1,30 @@
-
-.sign-in {
-  padding: 30px;
-  display: flex;
-  align-items: center;
-  p {
-    color: $olive;
+.devise-form-field {
+  border: 1px solid $gold !important;
+  input {
+    border: 1px solid $gold !important;
   }
+}
+
+.form-inputs label {
+  color: $olive;
+}
+
 .form-inputs input {
   text-align: center;
+  border: 1px solid;
   border-radius: 5px;
+  border-color: $gold;
 }
+
+.form-background {
+  background-position: center;
+  background-size: cover;
+  background-image: url(asset_path("login_page_background.jpg"));
+}
+
+.form-control:focus {
+  border-color: rgba(98, 118, 85, 0.2)!important;
+  box-shadow: 0 0 0 0.2rem rgba(98, 118, 85, 0.25);
 }
 
 .form-control.is-valid {
@@ -17,15 +32,10 @@
   background: white;
 }
 
-.forgot-pw a {
-  color: $olive;
+.form-control.is-valid:focus {
+  border-color: rgba(98, 118, 85, 0.2)!important;
+  box-shadow: 0 0 0 0.2rem rgba(98, 118, 85, 0.25);
 }
-
-.link-forms a {
-  text-align: center;
-  color: $olive;
-}
-
 /* Side Menu */
 
 #sidebar-wrapper {
@@ -131,4 +141,3 @@
     // color: $gray-900;
   }
 }
-
