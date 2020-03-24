@@ -1,6 +1,12 @@
 .container-fluid {
   background-color: white;
   padding-bottom: 20px;
+  padding-top: 15px;
+}
+
+.container-content {
+  margin: auto;
+  max-width: 850px;
 }
 
  .container-fluid-full-screen {
@@ -17,3 +23,7 @@
 }
 }
 
+.container-form {
+  max-width: 600px;
+  margin: auto;
+}

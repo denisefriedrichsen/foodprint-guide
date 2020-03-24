@@ -15,31 +15,170 @@
 @import "pages/product_index";
 @import "pages/posts_index";
 @import "pages/home";
-@import "pages/users_product_index";
-@import "pages/devise_registrations_edit";
 
 
 a {
   text-decoration: none;
+  color: $olive;
+}
+
+a:focus {
+  text-decoration: none;
+  color: $olive;
+}
+
+a:active {
+  text-decoration: none;
+  color: $olive !important;
 }
 
 
 a:hover {
   text-decoration: none;
+  color: $olive;
 }
 
 ul {
   list-style: none;
   color: $olive;
   font-weight: bold;
-  font-size: 16px;
+  font-size: 18px;
   padding-left: 10px;
 }
 
 .title {
   text-align: center;
-  font-size: 23px;
-  padding: 20px;
-  background-color: white;
+  padding: 10px 0px;
 }
 
+.olive-text {
+  color: $olive;
+}
+
+.gold-text {
+  font-family: Lato;
+  color: $gold;
+}
+
+h1, h3, h2, h4 {
+  color: $olive;
+  font-family: Merriweather;
+}
+
+h5, h6 {
+  color: $gold;
+  font-family: Lato;
+}
+
+p {
+  font-size: 18px;
+  color: $gray;
+}
+
+h1 {
+  font-size: 30px;
+}
+
+h2 {
+  font-size: 25px;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  h1 {
+    font-size:35px;
+  }
+  h2 {
+    font-size:30px;
+  }
+  h3 {
+    font-size:25px;
+  }
+  h4 {
+  font-size: 20px;
+  }
+  h5 {
+  font-size: 16px;
+  }
+  p {
+    font-size:20px;
+  }
+}
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  h1 {
+    font-size:40px;
+    }
+  h2 {
+    font-size:35px;
+  }
+  h3 {
+    font-size:30px;
+  }
+  h4 {
+    font-size:25px;
+  }
+  h5 {
+  font-size: 20px;
+  }
+  p {
+    font-size:20px;
+  }
+}
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  h1 {
+    font-size:50px;
+    }
+  h2 {
+    font-size:45px;
+  }
+  h3 {
+    font-size:30px;
+  }
+  h4 {
+    font-size:25px;
+  }
+   h5 {
+  font-size: 20px;
+  }
+  p {
+    font-size:20px;
+  }
+ }
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  h1 {
+    font-size:50px;
+    }
+  h2 {
+    font-size:45px;
+  }
+  h3 {
+    font-size:30px;
+  }
+  h4 {
+    font-size:25px;
+  }
+   h5 {
+  font-size: 20px;
+  }
+  p {
+    font-size:20px;
+  }
+ }

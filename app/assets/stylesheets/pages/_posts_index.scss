@@ -1,42 +1,29 @@
-h1, h3, h2, h4 {
-  color: $olive;
-}
-
-#header {
-  padding-top: 20px;
-  h4 {
-    font-size: 20px;
-  }
-  h1 {
-    font-size: 40px;
-  }
-}
-
-#updates {
-  text-align: center;
-}
-
 .newsfeed-menu {
   display: flex;
-  width: 100%;
+  justify-content: space-between;
+  p {
+    color: $olive;
+  }
 }
 
 .newsfeed-menu-left {
   width: 70%;
   margin-right: 8px;
+  flex-grow: 1;
 }
 
 .newsfeed-menu-right {
-  border-radius: 10px;
   background-image: image-url('map_producers.svg');
   background-size: cover;
+  background-position: center;
   color: $olive;
-  padding-top: 30px;
+  padding: 30px 20px;
   height: 230px;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
+  border-radius: 20px;
 }
 
 
@@ -45,10 +32,11 @@ h1, h3, h2, h4 {
   background-image: image-url('apple.svg');
   box-shadow: inset 0 0 0 100vw rgba(0,0,0,0.1);
   background-size: cover;
+  background-position: center;
   border-radius: 20px;
   position: relative;
 
-  #products_search {
+  #products-search {
     position: absolute;
     right: 30px;
     top: 30px;
@@ -65,6 +53,9 @@ h1, h3, h2, h4 {
 .newsfeed-menu-options {
   display: flex;
   justify-content: space-between;
+  a {
+    flex-grow: 2;
+  }
   div {
   background-color: #F2F2E7;
   height: 108px;
@@ -74,25 +65,22 @@ h1, h3, h2, h4 {
   }
 }
 
+.newsfeed-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .account {
-  max-width: 130px;
   margin-right: 8px;
-  padding-left: 15px;
-  padding-top: 15px;
+  padding: 15px 30px 15px 15px;
 }
 
 
 .favourite-products {
-  max-width: 130px;
-  padding-left: 15px;
-  padding-top: 15px;
+  padding: 15px 30px 15px 15px;
 }
 
 
-#producer_icon {
+#producer-icon {
   margin-top: 10px;
-}
-
-#updates, #posts, #header {
-  margin-bottom: 20px;
 }
