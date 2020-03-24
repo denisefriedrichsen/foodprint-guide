@@ -2,7 +2,7 @@
   <div class="container-content">
     <h1 class="title"><%= @product.name %></h1>
     <%= render 'shared/banner-show-product' %>
-    <h4 class="gold-text">Season: <%= @product.season_start_month %> - <%= @product.season_end_month %></h4>
+    <p class="gold-text mb-1">Season: <%= @product.season_start_month %> - <%= @product.season_end_month %></p>
     <p><%= @product.content %></p>
     <ul>
       <li><i class="fas fa-seedling info"></i><%= @product.fact1.capitalize %></li>

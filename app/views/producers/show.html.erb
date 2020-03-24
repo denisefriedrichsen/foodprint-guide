@@ -9,7 +9,7 @@
     <% else %>
       <h1 class="title"><%= @producer.company_name %></h1>
       <%= render 'shared/banner-show-producer', locals: { to_delete: false} %>
-      <h4 class="gold-text"><%= @producer.address%></h4>
+      <p class="gold-text mb-1"><%= @producer.address%></p>
       <p><%= @producer.description %></p>
       <ul>
         <% if params[:search].present? && params[:search][:query].blank? == false %>
