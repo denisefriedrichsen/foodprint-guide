@@ -1,18 +1,9 @@
-
-#header {
-  padding-top: 20px;
-  margin: 0px auto 20px auto;
-  h1 {
-    font-size: 55px;
-  }
-}
-
-#updates {
-  text-align: center;
-}
 .newsfeed-menu {
   display: flex;
   justify-content: space-between;
+  p {
+    color: $olive;
+  }
 }
 
 .newsfeed-menu-left {
@@ -45,7 +36,7 @@
   border-radius: 20px;
   position: relative;
 
-  #products_search {
+  #products-search {
     position: absolute;
     right: 30px;
     top: 30px;
@@ -90,10 +81,6 @@
 }
 
 
-#producer_icon {
+#producer-icon {
   margin-top: 10px;
-}
-
-#updates, #posts, #header {
-  margin-bottom: 20px;
 }
