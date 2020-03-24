@@ -55,6 +55,11 @@ ul {
   color: $olive;
 }
 
+.gold-text {
+  font-family: Lato;
+  color: $gold;
+}
+
 h1, h3, h2, h4 {
   color: $olive;
   font-family: Merriweather;
@@ -67,6 +72,7 @@ h5, h6 {
 
 p {
   font-size: 18px;
+  color: $gray;
 }
 
 h1 {

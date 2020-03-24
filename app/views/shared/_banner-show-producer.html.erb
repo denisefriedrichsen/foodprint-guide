@@ -1,6 +1,6 @@
-<div class="banner-show">
-    <%= render 'shared/producer-card_favourite_icon', producer: @producer, to_delete: false %>
-  <%= image_tag @producer.photo, class:"banner-show-img" %>
+<div class="banner-show mb-3">
+  <%= image_tag @producer.photo %>
+  <%= render 'shared/producer-card_favourite_icon', producer: @producer, to_delete: false %>
 </div>
 
 
